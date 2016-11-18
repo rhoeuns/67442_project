@@ -403,6 +403,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RhoEun.Ibeacon-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -414,6 +415,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RhoEun.Ibeacon-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -482,6 +484,7 @@
 				A9988A531DD0AE4B0028108E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9988A541DD0AE4B0028108E /* Build configuration list for PBXNativeTarget "Ibeacon_testTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +493,7 @@
 				A9988A561DD0AE4B0028108E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9988A571DD0AE4B0028108E /* Build configuration list for PBXNativeTarget "Ibeacon_testUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +502,7 @@
 				A9988A591DD0AE4B0028108E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
