@@ -19,6 +19,6 @@ struct InLineFor {
      - returns: Seconds between now and the estimated seating time.
      */
     func waitTime() -> NSTimeInterval {
-        return generalEstimatedSeatingTime.timeIntervalSinceNow
+        return personalEstimatedSeatingTime.timeIntervalSinceNow
     }
 }
