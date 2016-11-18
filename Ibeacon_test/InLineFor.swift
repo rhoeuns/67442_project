@@ -1,5 +1,5 @@
 //
-//  Restaurant.swift
+//  RestaurantsInLineFor.swift
 //  Ibeacon_test
 //
 //  Created by Alex Wang on 11/18/16.
@@ -8,21 +8,12 @@
 
 import Foundation
 
-struct Restaurant {
-    let id: Int
-    let name: String
-    let description: String
-    let phone: String
-    let picture: String
-    let address: String
-    let longitude: Float
-    let latitude: Float
-    let time_open: NSDate
-    let time_closed: NSDate
-    let generalEstimatedSeatingTime: NSDate
+struct InLineFor {
+    let restaurant: Restaurant
+    let personalEstimatedSeatingTime: NSDate
     
     /**
-     Get the estimated wait time that everyone sees.
+     Get the estimated wait time until this specific user is supposed to be seated.
      (Note: NSTimeInterval is an alias for Double)
      
      - returns: Seconds between now and the estimated seating time.

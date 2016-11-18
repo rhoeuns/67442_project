@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF1181DDFB35900A35D81 /* Restaurant.swift */; };
+		842AF11B1DDFB85300A35D81 /* InLineFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11A1DDFB85300A35D81 /* InLineFor.swift */; };
 		A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */; };
 		A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2E1DD0AE4A0028108E /* ViewController.swift */; };
 		A9988A321DD0AE4A0028108E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9988A301DD0AE4A0028108E /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		842AF1181DDFB35900A35D81 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		842AF11A1DDFB85300A35D81 /* InLineFor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InLineFor.swift; sourceTree = "<group>"; };
 		A9988A291DD0AE4A0028108E /* Ibeacon_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ibeacon_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9988A2E1DD0AE4A0028108E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				842AF1181DDFB35900A35D81 /* Restaurant.swift */,
+				842AF11A1DDFB85300A35D81 /* InLineFor.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */,
 				A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */,
 				842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */,
+				842AF11B1DDFB85300A35D81 /* InLineFor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
