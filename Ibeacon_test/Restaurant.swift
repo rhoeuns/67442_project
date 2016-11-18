@@ -15,8 +15,8 @@ struct Restaurant {
     let phone: String
     let picture: String
     let address: String
-    let longitude: Float
     let latitude: Float
+    let longitude: Float
     let time_open: NSDate
     let time_closed: NSDate
     let generalEstimatedSeatingTime: NSDate
