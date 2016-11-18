@@ -17,9 +17,25 @@ struct Restaurant {
     let address: String
     let latitude: Float
     let longitude: Float
-    let time_open: NSDate
-    let time_closed: NSDate
+    let time_open: String
+    let time_closed: String
     let generalEstimatedSeatingTime: NSDate
+    
+    init(id: Int, name: String, description: String, phone: String, picture: String,
+         address: String, latitude: Float, longitude: Float, time_open: String, time_closed: String,
+         generalEstimatedSeatingTime: NSDate) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.phone = phone
+        self.picture = picture
+        self.address = address
+        self.latitude = latitude
+        self.longitude = longitude
+        self.time_open = time_open
+        self.time_closed = time_closed
+        self.generalEstimatedSeatingTime = generalEstimatedSeatingTime
+    }
     
     /**
      Get the estimated wait time that everyone sees.

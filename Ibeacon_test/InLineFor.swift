@@ -12,6 +12,11 @@ struct InLineFor {
     let restaurant: Restaurant
     let personalEstimatedSeatingTime: NSDate
     
+    init(restaurant: Restaurant, personalEstimatedSeatingTime: NSDate) {
+        self.restaurant = restaurant
+        self.personalEstimatedSeatingTime = personalEstimatedSeatingTime
+    }
+    
     /**
      Get the estimated wait time until this specific user is supposed to be seated.
      (Note: NSTimeInterval is an alias for Double)
