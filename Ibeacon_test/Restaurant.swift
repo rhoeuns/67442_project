@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct Restaurant {
     let id: Int
@@ -35,6 +36,19 @@ struct Restaurant {
         self.time_open = time_open
         self.time_closed = time_closed
         self.generalEstimatedSeatingTime = generalEstimatedSeatingTime
+    }
+    
+    init(json: JSON) {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let time = formatter.dateFromString(json["generalEstimatedSeatingTime"].string!)!
+        
+        self.init(id: json["id"].int!, name: json["name"].string!,
+                  description: json["description"].string!,
+                  phone: json["phone"].string!, picture: json["picture"].string!,
+                  address: json["address"].string!, latitude: Float(json["latitude"].double!),
+                  longitude: Float(json["longitude"].double!), time_open: json["time_open"].string!,
+                  time_closed: json["time_closed"].string!, generalEstimatedSeatingTime: time)
     }
     
     /**
