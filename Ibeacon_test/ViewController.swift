@@ -25,6 +25,7 @@ class ViewController: UIViewController {
 //        locationManager.startRangingBeaconsInRegion(region)
         
         MockData()
+        ServerRequestor().testGET()
     }
 
     override func didReceiveMemoryWarning() {
