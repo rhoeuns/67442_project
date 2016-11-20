@@ -33,7 +33,7 @@ class DataStore {
      
      - Returns: A function that will be the completion handler for JSONParser
      */
-    func storeResults(completionHandler: (() -> Void)?) -> (JSON?, NSError?) -> Void {
+    private func storeResults(completionHandler: (() -> Void)?) -> (JSON?, NSError?) -> Void {
         return { json, error in
             let jsonParser = JSONParser()
             let models = jsonParser.parseJSON(json!)
