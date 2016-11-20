@@ -15,6 +15,8 @@ class ViewController: UIViewController {
 //    let locationManager = CLLocationManager()
 //    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString("") , identifier: "Estimotes"))
     
+    let dataStore = DataStore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        // Do any additional setup after loading the view, typically from a nib.
@@ -24,8 +26,13 @@ class ViewController: UIViewController {
 //        }
 //        locationManager.startRangingBeaconsInRegion(region)
         
-        MockData()
-        ServerRequestor().testGET()
+//        MockData()
+//        ServerRequestor().testGET()
+        
+        dataStore.fetchServerData {
+            print("Callback function inside ViewController worked! yay!")
+            self.test()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,5 +44,9 @@ class ViewController: UIViewController {
 //    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [AnyObject], inRegion region: CLBeaconRegion) {
 //        print(beacons)
 //    }
+    
+    func test() {
+        print("testing (breakpoint) if the data has been loaded successfully")
+    }
 }
 
