@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		176AB0EC6A3F4ACB03446467 /* Pods_Ibeacon_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2D1FFFFE2D24714712CA10 /* Pods_Ibeacon_testTests.framework */; };
 		841ECEF21DE18CFE000AE3B6 /* ServerRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF11DE18CFE000AE3B6 /* ServerRequestor.swift */; };
+		841ECEF71DE22F14000AE3B6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF61DE22F14000AE3B6 /* DataStore.swift */; };
+		841ECEF91DE22F27000AE3B6 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF81DE22F27000AE3B6 /* JSONParser.swift */; };
 		842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF1181DDFB35900A35D81 /* Restaurant.swift */; };
 		842AF11B1DDFB85300A35D81 /* InLineFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11A1DDFB85300A35D81 /* InLineFor.swift */; };
 		842AF11D1DDFC47F00A35D81 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11C1DDFC47F00A35D81 /* MockData.swift */; };
@@ -47,6 +49,8 @@
 		6C0E429849837ED9E107D1F8 /* Pods-Ibeacon_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_test/Pods-Ibeacon_test.debug.xcconfig"; sourceTree = "<group>"; };
 		7A3C256EC68D0ED490695174 /* Pods_Ibeacon_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ibeacon_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		841ECEF11DE18CFE000AE3B6 /* ServerRequestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequestor.swift; sourceTree = "<group>"; };
+		841ECEF61DE22F14000AE3B6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		841ECEF81DE22F27000AE3B6 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		842AF1181DDFB35900A35D81 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		842AF11A1DDFB85300A35D81 /* InLineFor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InLineFor.swift; sourceTree = "<group>"; };
 		842AF11C1DDFC47F00A35D81 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -115,12 +119,28 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		841ECEF31DE22E24000AE3B6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				842AF11C1DDFC47F00A35D81 /* MockData.swift */,
+				841ECEF61DE22F14000AE3B6 /* DataStore.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		841ECEF51DE22EF8000AE3B6 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				841ECEF81DE22F27000AE3B6 /* JSONParser.swift */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
 		842AF1171DDFB33F00A35D81 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				842AF1181DDFB35900A35D81 /* Restaurant.swift */,
 				842AF11A1DDFB85300A35D81 /* InLineFor.swift */,
-				842AF11C1DDFC47F00A35D81 /* MockData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -150,6 +170,8 @@
 		A9988A2B1DD0AE4A0028108E /* Ibeacon_test */ = {
 			isa = PBXGroup;
 			children = (
+				841ECEF51DE22EF8000AE3B6 /* Parsers */,
+				841ECEF31DE22E24000AE3B6 /* Data */,
 				841ECEF01DE18A7B000AE3B6 /* Network */,
 				842AF1171DDFB33F00A35D81 /* Models */,
 				A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */,
@@ -471,7 +493,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841ECEF71DE22F14000AE3B6 /* DataStore.swift in Sources */,
 				A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */,
+				841ECEF91DE22F27000AE3B6 /* JSONParser.swift in Sources */,
 				A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */,
 				842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */,
 				842AF11B1DDFB85300A35D81 /* InLineFor.swift in Sources */,

@@ -13,7 +13,7 @@ import SwiftyJSON
 class ServerRequestor {
     let jsonServerEndpoint = "http://localhost:3000/db"
     
-    func testGET() {
+    func getPayload(completionHandler: (JSON?, NSError?) -> ()) {
         Alamofire.request(.GET, jsonServerEndpoint)
             .responseJSON { response in
                 guard response.result.error == nil else {
@@ -28,12 +28,7 @@ class ServerRequestor {
 
                     print("Data from server is:\n" + data.description)
                     
-//                    if let title = todo["title"].string {
-//                        print("The title is: " + title)
-//                    }
-//                    else {
-//                        print("error parsing /todos/1")
-//                    }
+                    completionHandler(data, nil)
                 }
         }
     }
