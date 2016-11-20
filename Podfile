@@ -7,6 +7,7 @@ target 'Ibeacon_test' do
 
   # Pods for Ibeacon_test
   pod 'SwiftyJSON', '2.4.0'
+  pod 'Alamofire', '~> 3.5'
 
   target 'Ibeacon_testTests' do
     inherit! :search_paths
