@@ -178,7 +178,7 @@ public class Channel: Hashable, Equatable {
     internal var onReceiveActionHooks: Dictionary<String, OnReceiveClosure> = Dictionary()
     internal unowned var client: ActionCableClient
     internal var actionBuffer: Array<Action> = Array()
-    public let hashValue: Int = random()
+    public let hashValue: Int = Int(arc4random())
 }
 
 public func ==(lhs: Channel, rhs: Channel) -> Bool {

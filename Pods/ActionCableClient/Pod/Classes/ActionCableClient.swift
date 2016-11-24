@@ -461,7 +461,7 @@ extension ActionCableClient : CustomDebugStringConvertible {
 
 extension ActionCableClient : CustomPlaygroundQuickLookable {
     public func customPlaygroundQuickLook() -> PlaygroundQuickLook {
-        return PlaygroundQuickLook.URL(socket.currentURL.absoluteString)
+        return PlaygroundQuickLook.URL(socket.currentURL.absoluteString!)
     }
 }
 
