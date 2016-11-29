@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91DD8241DDFB600005B4E8B /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */; };
+		A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8261DDFCC7C005B4E8B /* beacon.swift */; };
 		A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */; };
 		A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2E1DD0AE4A0028108E /* ViewController.swift */; };
 		A9988A321DD0AE4A0028108E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9988A301DD0AE4A0028108E /* Main.storyboard */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
+		A91DD8251DDFB6C6005B4E8B /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjCBridge.h; path = Ibeacon_test/ObjCBridge.h; sourceTree = "<group>"; };
+		A91DD8261DDFCC7C005B4E8B /* beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beacon.swift; sourceTree = "<group>"; };
 		A9988A291DD0AE4A0028108E /* Ibeacon_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ibeacon_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9988A2E1DD0AE4A0028108E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91DD8241DDFB600005B4E8B /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,7 @@
 		A9988A201DD0AE4A0028108E = {
 			isa = PBXGroup;
 			children = (
+				A91DD8251DDFB6C6005B4E8B /* ObjCBridge.h */,
 				A9988A2B1DD0AE4A0028108E /* Ibeacon_test */,
 				A9988A401DD0AE4B0028108E /* Ibeacon_testTests */,
 				A9988A4B1DD0AE4B0028108E /* Ibeacon_testUITests */,
@@ -97,12 +104,14 @@
 		A9988A2B1DD0AE4A0028108E /* Ibeacon_test */ = {
 			isa = PBXGroup;
 			children = (
+				A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */,
 				A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */,
 				A9988A2E1DD0AE4A0028108E /* ViewController.swift */,
 				A9988A301DD0AE4A0028108E /* Main.storyboard */,
 				A9988A331DD0AE4A0028108E /* Assets.xcassets */,
 				A9988A351DD0AE4A0028108E /* LaunchScreen.storyboard */,
 				A9988A381DD0AE4A0028108E /* Info.plist */,
+				A91DD8261DDFCC7C005B4E8B /* beacon.swift */,
 			);
 			path = Ibeacon_test;
 			sourceTree = "<group>";
@@ -193,6 +202,7 @@
 				TargetAttributes = {
 					A9988A281DD0AE4A0028108E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LKSJ2UTMZ6;
 					};
 					A9988A3C1DD0AE4B0028108E = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -256,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */,
 				A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */,
 				A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */,
 			);
@@ -399,10 +410,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ibeacon_test",
+				);
 				INFOPLIST_FILE = Ibeacon_test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RhoEun.Ibeacon-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Ibeacon_test/ObjCBridge.h;
 			};
 			name = Debug;
 		};
@@ -410,10 +429,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ibeacon_test",
+				);
 				INFOPLIST_FILE = Ibeacon_test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RhoEun.Ibeacon-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Ibeacon_test/ObjCBridge.h;
 			};
 			name = Release;
 		};
@@ -482,6 +509,7 @@
 				A9988A531DD0AE4B0028108E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9988A541DD0AE4B0028108E /* Build configuration list for PBXNativeTarget "Ibeacon_testTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +518,7 @@
 				A9988A561DD0AE4B0028108E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9988A571DD0AE4B0028108E /* Build configuration list for PBXNativeTarget "Ibeacon_testUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +527,7 @@
 				A9988A591DD0AE4B0028108E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
