@@ -12,7 +12,6 @@
 		841ECEF71DE22F14000AE3B6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF61DE22F14000AE3B6 /* DataStore.swift */; };
 		841ECEF91DE22F27000AE3B6 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF81DE22F27000AE3B6 /* JSONParser.swift */; };
 		842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF1181DDFB35900A35D81 /* Restaurant.swift */; };
-		842AF11B1DDFB85300A35D81 /* InLineFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11A1DDFB85300A35D81 /* InLineFor.swift */; };
 		842AF11D1DDFC47F00A35D81 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11C1DDFC47F00A35D81 /* MockData.swift */; };
 		A84D1FAD51FD754AA8744E32 /* Pods_Ibeacon_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3C256EC68D0ED490695174 /* Pods_Ibeacon_testUITests.framework */; };
 		A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */; };
@@ -52,7 +51,6 @@
 		841ECEF61DE22F14000AE3B6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		841ECEF81DE22F27000AE3B6 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		842AF1181DDFB35900A35D81 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		842AF11A1DDFB85300A35D81 /* InLineFor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InLineFor.swift; sourceTree = "<group>"; };
 		842AF11C1DDFC47F00A35D81 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		A9988A291DD0AE4A0028108E /* Ibeacon_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ibeacon_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				842AF1181DDFB35900A35D81 /* Restaurant.swift */,
-				842AF11A1DDFB85300A35D81 /* InLineFor.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -498,7 +495,6 @@
 				841ECEF91DE22F27000AE3B6 /* JSONParser.swift in Sources */,
 				A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */,
 				842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */,
-				842AF11B1DDFB85300A35D81 /* InLineFor.swift in Sources */,
 				842AF11D1DDFC47F00A35D81 /* MockData.swift in Sources */,
 				841ECEF21DE18CFE000AE3B6 /* ServerRequestor.swift in Sources */,
 			);
