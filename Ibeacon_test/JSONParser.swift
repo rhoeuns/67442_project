@@ -10,15 +10,11 @@ import Foundation
 import SwiftyJSON
 
 class JSONParser {
-    func parseJSON(data: JSON) -> ([Restaurant], [InLineFor]) {
+    func parseJSON(data: JSON) -> [Restaurant] {
         let restaurantModels = data["restaurants"].map { _, subJSON in
             return Restaurant(json: subJSON)
         }
-        
-        let inLineForModels = data["inLineFor"].map { _, subJSON in
-            return InLineFor(json: subJSON, restaurantsList: restaurantModels)
-        }
 
-        return (restaurantModels, inLineForModels)
+        return restaurantModels
     }
 }

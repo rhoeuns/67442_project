@@ -11,7 +11,6 @@ import SwiftyJSON
 
 class DataStore {
     var restaurants = [Restaurant]()
-    var restaurantsInLineFor = [InLineFor]()
 
     /**
      Fetches json data payload from the server.
@@ -36,10 +35,9 @@ class DataStore {
     private func storeResults(completionHandler: (() -> Void)?) -> (JSON?, NSError?) -> Void {
         return { json, error in
             let jsonParser = JSONParser()
-            let models = jsonParser.parseJSON(json!)
+            let restaurants = jsonParser.parseJSON(json!)
             
-            self.restaurants = models.0
-            self.restaurantsInLineFor = models.1
+            self.restaurants = restaurants
             
             if completionHandler != nil {
                 completionHandler!()
