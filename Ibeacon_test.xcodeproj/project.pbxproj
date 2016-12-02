@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A91DD8241DDFB600005B4E8B /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */; };
 		A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8261DDFCC7C005B4E8B /* beacon.swift */; };
+		A91DD8561DF234D2005B4E8B /* NBRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */; };
 		A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */; };
 		A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2E1DD0AE4A0028108E /* ViewController.swift */; };
 		A9988A321DD0AE4A0028108E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9988A301DD0AE4A0028108E /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		A91DD8251DDFB6C6005B4E8B /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjCBridge.h; path = Ibeacon_test/ObjCBridge.h; sourceTree = "<group>"; };
 		A91DD8261DDFCC7C005B4E8B /* beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beacon.swift; sourceTree = "<group>"; };
+		A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBRestaurantViewController.swift; sourceTree = "<group>"; };
 		A9988A291DD0AE4A0028108E /* Ibeacon_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ibeacon_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9988A2E1DD0AE4A0028108E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */,
 				A9988A2E1DD0AE4A0028108E /* ViewController.swift */,
 				A9988A301DD0AE4A0028108E /* Main.storyboard */,
+				A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */,
 				A9988A331DD0AE4A0028108E /* Assets.xcassets */,
 				A9988A351DD0AE4A0028108E /* LaunchScreen.storyboard */,
 				A9988A381DD0AE4A0028108E /* Info.plist */,
@@ -268,6 +271,7 @@
 			files = (
 				A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */,
 				A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */,
+				A91DD8561DF234D2005B4E8B /* NBRestaurantViewController.swift in Sources */,
 				A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
