@@ -9,19 +9,22 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController {
+//class ViewController: UIViewController, CLLocationManagerDelegate {
 
-    let locationManager = CLLocationManager()
-    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString("") , identifier: "Estimotes"))
+//    let locationManager = CLLocationManager()
+//    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString("") , identifier: "Estimotes"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        locationManager.delegate = self
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse){
-            locationManager.requestWhenInUseAuthorization()
-        }
-        locationManager.startRangingBeaconsInRegion(region)
+//        // Do any additional setup after loading the view, typically from a nib.
+//        locationManager.delegate = self
+//        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse){
+//            locationManager.requestWhenInUseAuthorization()
+//        }
+//        locationManager.startRangingBeaconsInRegion(region)
+        
+        MockData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,8 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
 
-    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [AnyObject], inRegion region: CLBeaconRegion) {
-        print(beacons)
-    }
+//    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [AnyObject], inRegion region: CLBeaconRegion) {
+//        print(beacons)
+//    }
 }
 
