@@ -21,7 +21,7 @@ class DataStore {
      */
     func fetchServerData(completionHandler: (() -> Void)?) {
         let serverRequestor = ServerRequestor()
-        serverRequestor.getPayload(storeResults(completionHandler))
+        serverRequestor.getRestaurants(storeResults(completionHandler))
     }
     
     /**

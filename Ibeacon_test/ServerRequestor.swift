@@ -14,7 +14,7 @@ class ServerRequestor {
 //    let endpoint = "http://localhost:3000/db"
     let endpoint = "http://localhost:3000/users/1/restaurants"
 
-    func getPayload(completionHandler: (JSON?, NSError?) -> ()) {
+    func getRestaurants(completionHandler: (JSON?, NSError?) -> ()) {
         Alamofire.request(.GET, endpoint)
             .responseJSON { response in
                 guard response.result.error == nil else {
@@ -29,6 +29,29 @@ class ServerRequestor {
                 if let value = response.result.value {
                     let data = JSON(value)
 
+                    print("Data from server is:\n" + data.description)
+                    
+                    completionHandler(data, nil)
+                }
+        }
+    }
+    
+    func getRestaurant(restaurantId: Int, completionHandler: (JSON?, NSError?) -> ()) {
+        let restaurantEndpoint = "\(endpoint)/\(restaurantId)"
+        Alamofire.request(.GET, restaurantEndpoint)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    // got an error in getting the data, need to handle it
+                    print("error calling GET on \(restaurantEndpoint)")
+                    print(response.result.error!)
+                    
+                    completionHandler(nil, response.result.error)
+                    return
+                }
+                
+                if let value = response.result.value {
+                    let data = JSON(value)
+                    
                     print("Data from server is:\n" + data.description)
                     
                     completionHandler(data, nil)

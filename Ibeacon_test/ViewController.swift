@@ -29,10 +29,10 @@ class ViewController: UIViewController {
 //        MockData()
 //        ServerRequestor().testGET()
         
-//        dataStore.fetchServerData {
-//            print("Callback function inside ViewController worked! yay!")
-////            self.test()
-//        }
+        dataStore.fetchServerData {
+            print("Callback function inside ViewController worked! yay!")
+//            self.test()
+        }
         
         let requestor = ServerRequestor()
         
