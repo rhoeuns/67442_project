@@ -44,14 +44,32 @@ class ServerRequestor {
         
         Alamofire.request(.POST, makeReservationEndpoint, parameters: params, encoding: .JSON)
             .validate()
+            .response { request, response, data, error in
+                print("---------------------------")
+                print("Making reservation, response type no JSON")
+
+                print(request)
+                print(response)
+                print(data)
+                print(error)
+            }
+            .responseData { response in
+                print("---------------------------")
+                print("Making reservation, response type DATA")
+
+                print(response.request)
+                print(response.response)
+                print(response.result)
+            }
             .responseJSON { response in
+                print("---------------------------")
+                
                 switch response.result {
                 case .Success:
                     print("Validation Successful, reservation made!")
                     completionHandler(nil, nil)
                     
                 case .Failure(let error):
-                    print("---------------------------")
                     print("Failed to make reservation:")
                     print(error)
                     
@@ -78,14 +96,32 @@ class ServerRequestor {
 
         Alamofire.request(.POST, cancelReservationEndpoint)
             .validate()
+            .response { request, response, data, error in
+                print("---------------------------")
+                print("Cancelling reservation, response type no JSON")
+                
+                print(request)
+                print(response)
+                print(data)
+                print(error)
+            }
+            .responseData { response in
+                print("---------------------------")
+                print("Cancelling reservation, response type DATA")
+                
+                print(response.request)
+                print(response.response)
+                print(response.result)
+            }
             .responseJSON { response in
+                print("---------------------------")
+
                 switch response.result {
                 case .Success:
                     print("Validation Successful, reservation cancelled!")
                     completionHandler(nil, nil)
                     
                 case .Failure(let error):
-                    print("---------------------------")
                     print("Failed to cancel reservation:")
                     print(error)
 
