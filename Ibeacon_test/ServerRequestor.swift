@@ -37,28 +37,14 @@ class ServerRequestor {
     }
     
     func makeReservation(restaurantId: Int, party_size: Int, completionHandler: (JSON?, NSError?) -> ()) {
-        print("MAKING RESERVATION")
         let makeReservationEndpoint = "\(endpoint)/\(restaurantId)/make-reservation"
-        print("sending request to the url: \(makeReservationEndpoint)")
         let params = buildReservationJSON(party_size: party_size)
+        
+        print("MAKING RESERVATION, sending request to the url: \(makeReservationEndpoint)")
         
         Alamofire.request(.POST, makeReservationEndpoint, parameters: params, encoding: .JSON)
             .validate()
             .responseData { response in
-                
-
-//                print(response.request)
-//                print(response.response)
-//                print(response.result)
-
-//                switch response.result {
-//                case .Success:
-//                    print("Validation Successful, reservation made!")
-//                    completionHandler(nil, nil)
-//                case .Failure(_):
-//                    print("Failed reservation, forwarding data to responseJSON")
-//                }
-                
                 if case .Success = response.result {
                     print("---------------------------")
                     print("Making reservation, response type DATA")
@@ -67,11 +53,6 @@ class ServerRequestor {
                 }
             }
             .responseJSON { response in
-//                switch response.result {
-//                case .Success:
-//
-//                case .Failure(let error):
-                
                 // If the body is empty, quit.
                 // Manually checking because AlamoFire has no good way to handle an empty response body.
                 if response.response?.statusCode == 204 {
@@ -107,17 +88,9 @@ class ServerRequestor {
         Alamofire.request(.POST, cancelReservationEndpoint)
             .validate()
             .responseData { response in
-//                print(response.request)
-//                print(response.response)
-//                print(response.result)
-                
                 if case .Success = response.result {
                     print("---------------------------")
                     print("Cancelling reservation, response type DATA")
-
-//                    print("---------------------------")
-//                    print("Making reservation, response type DATA")
-//                    print("Validation Successful, reservation made!")
                     completionHandler(nil, nil)
                 }
             }
