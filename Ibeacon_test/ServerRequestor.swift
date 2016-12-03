@@ -44,32 +44,42 @@ class ServerRequestor {
         
         Alamofire.request(.POST, makeReservationEndpoint, parameters: params, encoding: .JSON)
             .validate()
-            .response { request, response, data, error in
-                print("---------------------------")
-                print("Making reservation, response type no JSON")
-
-                print(request)
-                print(response)
-                print(data)
-                print(error)
-            }
             .responseData { response in
-                print("---------------------------")
-                print("Making reservation, response type DATA")
-
-                print(response.request)
-                print(response.response)
-                print(response.result)
-            }
-            .responseJSON { response in
-                print("---------------------------")
                 
-                switch response.result {
-                case .Success:
+
+//                print(response.request)
+//                print(response.response)
+//                print(response.result)
+
+//                switch response.result {
+//                case .Success:
+//                    print("Validation Successful, reservation made!")
+//                    completionHandler(nil, nil)
+//                case .Failure(_):
+//                    print("Failed reservation, forwarding data to responseJSON")
+//                }
+                
+                if case .Success = response.result {
+                    print("---------------------------")
+                    print("Making reservation, response type DATA")
                     print("Validation Successful, reservation made!")
                     completionHandler(nil, nil)
-                    
-                case .Failure(let error):
+                }
+            }
+            .responseJSON { response in
+//                switch response.result {
+//                case .Success:
+//
+//                case .Failure(let error):
+                
+                // If the body is empty, quit.
+                // Manually checking because AlamoFire has no good way to handle an empty response body.
+                if response.response?.statusCode == 204 {
+                    return
+                }
+                
+                if case .Failure(let error) = response.result {
+                    print("---------------------------")
                     print("Failed to make reservation:")
                     print(error)
                     
@@ -96,15 +106,6 @@ class ServerRequestor {
 
         Alamofire.request(.POST, cancelReservationEndpoint)
             .validate()
-            .response { request, response, data, error in
-                print("---------------------------")
-                print("Cancelling reservation, response type no JSON")
-                
-                print(request)
-                print(response)
-                print(data)
-                print(error)
-            }
             .responseData { response in
                 print("---------------------------")
                 print("Cancelling reservation, response type DATA")
