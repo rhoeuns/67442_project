@@ -21,11 +21,11 @@ struct Restaurant {
     let time_open: String
     let time_closed: String
     let generalEstimatedSeatingTime: NSDate
-    let personal_estimated_seating_time: NSDate
+    let personal_estimated_seating_time: NSDate?
     
     init(id: Int, name: String, description: String, phone: String, picture: String,
          address: String, latitude: Float, longitude: Float, time_open: String, time_closed: String,
-         generalEstimatedSeatingTime: NSDate, personal_estimated_seating_time: NSDate) {
+         generalEstimatedSeatingTime: NSDate, personal_estimated_seating_time: NSDate?) {
         self.id = id
         self.name = name
         self.description = description
@@ -41,10 +41,20 @@ struct Restaurant {
     }
     
     init(json: JSON) {
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        let general_time = formatter.dateFromString(json["generalEstimatedSeatingTime"].string!)!
-        let personal_time = formatter.dateFromString(json["personal_estimated_seating_time"].string!)!
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss-ZZZZZ"
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        
+        let general_time = dateFormatter.dateFromString(json["general_estimated_seating_time"].string!)!
+        
+        var personal_time: NSDate?
+        if let personal_time_string = json["personal_estimated_seating_time"].string {
+            personal_time = dateFormatter.dateFromString(personal_time_string)!
+        }
+        else {
+            personal_time = nil
+        }
 
         self.init(id: json["id"].int!, name: json["name"].string!,
                   description: json["description"].string!,
