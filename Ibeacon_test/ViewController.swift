@@ -38,11 +38,11 @@ class ViewController: UIViewController {
         
         requestor.makeReservation(1, party_size: 2) { _, _ in
 //            requestor.makeReservation(1, party_size: 3) {_,_ in 
-//                requestor.cancelReservation() {_,_ in 
+                requestor.cancelReservation() {_,_ in 
 //                    requestor.cancelReservation() {_,_ in
 //                        print("ALL CALLBACKS COMPLETED")
 //                    }
-//                }
+                }
 //            }
         }
     }
