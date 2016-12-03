@@ -129,6 +129,7 @@ class ServerRequestor {
                 }
                 
                 if case .Failure(let error) = response.result {
+                    print("---------------------------")
                     print("Failed to cancel reservation:")
                     print(error)
 
