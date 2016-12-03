@@ -10,6 +10,8 @@ import UIKit
 
 class NBRestaurantViewController: UITableViewController {
 
+    var restaurants:[Restaurant] = MockData.init().restaurants
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,12 +31,21 @@ class NBRestaurantViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return restaurants.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
+        -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath)
+            
+            let restaurant = restaurants[indexPath.row] as Restaurant
+            cell.textLabel?.text = restaurant.name
+            return cell
     }
 
     /*

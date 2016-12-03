@@ -10,6 +10,11 @@
 		A91DD8241DDFB600005B4E8B /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */; };
 		A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8261DDFCC7C005B4E8B /* beacon.swift */; };
 		A91DD8561DF234D2005B4E8B /* NBRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */; };
+		176AB0EC6A3F4ACB03446467 /* Pods_Ibeacon_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2D1FFFFE2D24714712CA10 /* Pods_Ibeacon_testTests.framework */; };
+		842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF1181DDFB35900A35D81 /* Restaurant.swift */; };
+		842AF11B1DDFB85300A35D81 /* InLineFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11A1DDFB85300A35D81 /* InLineFor.swift */; };
+		842AF11D1DDFC47F00A35D81 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11C1DDFC47F00A35D81 /* MockData.swift */; };
+		A84D1FAD51FD754AA8744E32 /* Pods_Ibeacon_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3C256EC68D0ED490695174 /* Pods_Ibeacon_testUITests.framework */; };
 		A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */; };
 		A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2E1DD0AE4A0028108E /* ViewController.swift */; };
 		A9988A321DD0AE4A0028108E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9988A301DD0AE4A0028108E /* Main.storyboard */; };
@@ -42,6 +47,14 @@
 		A91DD8251DDFB6C6005B4E8B /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjCBridge.h; path = Ibeacon_test/ObjCBridge.h; sourceTree = "<group>"; };
 		A91DD8261DDFCC7C005B4E8B /* beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beacon.swift; sourceTree = "<group>"; };
 		A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBRestaurantViewController.swift; sourceTree = "<group>"; };
+		2909CA7B817DB80973D09835 /* Pods-Ibeacon_testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_testTests/Pods-Ibeacon_testTests.release.xcconfig"; sourceTree = "<group>"; };
+		2CC076563E83BDEA62E79D43 /* Pods-Ibeacon_testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_testUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_testUITests/Pods-Ibeacon_testUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6A7364040FC73D9A182BA9B7 /* Pods_Ibeacon_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ibeacon_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C0E429849837ED9E107D1F8 /* Pods-Ibeacon_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_test/Pods-Ibeacon_test.debug.xcconfig"; sourceTree = "<group>"; };
+		7A3C256EC68D0ED490695174 /* Pods_Ibeacon_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ibeacon_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842AF1181DDFB35900A35D81 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		842AF11A1DDFB85300A35D81 /* InLineFor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InLineFor.swift; sourceTree = "<group>"; };
+		842AF11C1DDFC47F00A35D81 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		A9988A291DD0AE4A0028108E /* Ibeacon_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ibeacon_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9988A2E1DD0AE4A0028108E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A91DD8241DDFB600005B4E8B /* EstimoteSDK.framework in Frameworks */,
+				DCEA0933215A3FE17CD514AB /* Pods_Ibeacon_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */,
+				842AF1171DDFB33F00A35D81 /* Models */,
 				A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */,
 				A9988A2E1DD0AE4A0028108E /* ViewController.swift */,
 				A9988A301DD0AE4A0028108E /* Main.storyboard */,
@@ -621,6 +636,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Ibeacon_test/ObjCBridge.h;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -641,6 +657,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Ibeacon_test/ObjCBridge.h;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
