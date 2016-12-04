@@ -32,11 +32,13 @@ class ViewController: UIViewController {
         dataStore.updateRestaurants() {
             print("Callback function inside ViewController worked! yay!")
 //            self.test()
+            
+            let restaurant1 = self.dataStore.restaurants[0]
+            self.dataStore.updateRestaurant(restaurant1) {
+                print("How do I test this? I'd need the server to change")
+            }
         }
-        let restaurant1 = dataStore.restaurants[0]
-        dataStore.updateRestaurant(restaurant1) {
-            print("How do I test this? I'd need the server to change")
-        }
+
         
 //        let requestor = ServerRequestor()
 //        
