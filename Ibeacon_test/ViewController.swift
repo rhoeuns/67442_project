@@ -8,33 +8,24 @@
 
 import UIKit
 import CoreLocation
+import CoreBluetooth
 
-class ViewController: UIViewController {
-//class ViewController: UIViewController, CLLocationManagerDelegate {
-
-//    let locationManager = CLLocationManager()
-//    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString("") , identifier: "Estimotes"))
+class ViewController: UIViewController, CBPeripheralManagerDelegate {
     
+    @IBOutlet weak var beaconStatus: UILabel!
     let dataStore = DataStore()
+    
+    let locationManager = CLLocationManager()
+    let myBTManager = CBPeripheralManager()
+    var lastStage = CLProximity.Unknown
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        // Do any additional setup after loading the view, typically from a nib.
-//        locationManager.delegate = self
-//        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse){
-//            locationManager.requestWhenInUseAuthorization()
-//        }
-//        locationManager.startRangingBeaconsInRegion(region)
-        
-//        MockData()
-//        ServerRequestor().testGET()
-        
-        dataStore.fetchServerData {
-            print("Callback function inside ViewController worked! yay!")
-            self.test()
-        }
-    }
-
+        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib.
+        // Define in iBeacon.swift
+        self.setupBeacon()
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,8 +36,11 @@ class ViewController: UIViewController {
 //        print(beacons)
 //    }
     
-    func test() {
-        print("testing (breakpoint) if the data has been loaded successfully")
-    }
+    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
+    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
+        
+        if peripheral.state == CBPeripheralManagerState.PoweredOff {
+            
+            simpleAlert("Beacon", message: "Turn On Your Device Bluetooh")
+        }        
 }
-

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91DD8241DDFB600005B4E8B /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */; };
+		A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8261DDFCC7C005B4E8B /* beacon.swift */; };
+		A91DD8561DF234D2005B4E8B /* NBRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */; };
 		176AB0EC6A3F4ACB03446467 /* Pods_Ibeacon_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2D1FFFFE2D24714712CA10 /* Pods_Ibeacon_testTests.framework */; };
 		841ECEF21DE18CFE000AE3B6 /* ServerRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF11DE18CFE000AE3B6 /* ServerRequestor.swift */; };
 		841ECEF71DE22F14000AE3B6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF61DE22F14000AE3B6 /* DataStore.swift */; };
@@ -43,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
+		A91DD8251DDFB6C6005B4E8B /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjCBridge.h; path = Ibeacon_test/ObjCBridge.h; sourceTree = "<group>"; };
+		A91DD8261DDFCC7C005B4E8B /* beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beacon.swift; sourceTree = "<group>"; };
+		A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBRestaurantViewController.swift; sourceTree = "<group>"; };
 		2909CA7B817DB80973D09835 /* Pods-Ibeacon_testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_testTests/Pods-Ibeacon_testTests.release.xcconfig"; sourceTree = "<group>"; };
 		2CC076563E83BDEA62E79D43 /* Pods-Ibeacon_testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_testUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_testUITests/Pods-Ibeacon_testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A7364040FC73D9A182BA9B7 /* Pods_Ibeacon_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ibeacon_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91DD8241DDFB600005B4E8B /* EstimoteSDK.framework in Frameworks */,
 				DCEA0933215A3FE17CD514AB /* Pods_Ibeacon_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +156,7 @@
 		A9988A201DD0AE4A0028108E = {
 			isa = PBXGroup;
 			children = (
+				A91DD8251DDFB6C6005B4E8B /* ObjCBridge.h */,
 				A9988A2B1DD0AE4A0028108E /* Ibeacon_test */,
 				A9988A401DD0AE4B0028108E /* Ibeacon_testTests */,
 				A9988A4B1DD0AE4B0028108E /* Ibeacon_testUITests */,
@@ -170,6 +179,7 @@
 		A9988A2B1DD0AE4A0028108E /* Ibeacon_test */ = {
 			isa = PBXGroup;
 			children = (
+				A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */,
 				841ECEF51DE22EF8000AE3B6 /* Parsers */,
 				841ECEF31DE22E24000AE3B6 /* Data */,
 				841ECEF01DE18A7B000AE3B6 /* Network */,
@@ -177,9 +187,11 @@
 				A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */,
 				A9988A2E1DD0AE4A0028108E /* ViewController.swift */,
 				A9988A301DD0AE4A0028108E /* Main.storyboard */,
+				A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */,
 				A9988A331DD0AE4A0028108E /* Assets.xcassets */,
 				A9988A351DD0AE4A0028108E /* LaunchScreen.storyboard */,
 				A9988A381DD0AE4A0028108E /* Info.plist */,
+				A91DD8261DDFCC7C005B4E8B /* beacon.swift */,
 			);
 			path = Ibeacon_test;
 			sourceTree = "<group>";
@@ -292,6 +304,7 @@
 				TargetAttributes = {
 					A9988A281DD0AE4A0028108E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LKSJ2UTMZ6;
 					};
 					A9988A3C1DD0AE4B0028108E = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -493,8 +506,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */,
 				841ECEF71DE22F14000AE3B6 /* DataStore.swift in Sources */,
 				A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */,
+				A91DD8561DF234D2005B4E8B /* NBRestaurantViewController.swift in Sources */,
 				841ECEF91DE22F27000AE3B6 /* JSONParser.swift in Sources */,
 				A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */,
 				842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */,
@@ -645,10 +660,18 @@
 			baseConfigurationReference = 6C0E429849837ED9E107D1F8 /* Pods-Ibeacon_test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ibeacon_test",
+				);
 				INFOPLIST_FILE = Ibeacon_test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RhoEun.Ibeacon-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Ibeacon_test/ObjCBridge.h;
 				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
@@ -658,10 +681,18 @@
 			baseConfigurationReference = F1B88E2AAE0E63FB754DA602 /* Pods-Ibeacon_test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ibeacon_test",
+				);
 				INFOPLIST_FILE = Ibeacon_test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RhoEun.Ibeacon-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Ibeacon_test/ObjCBridge.h;
 				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
