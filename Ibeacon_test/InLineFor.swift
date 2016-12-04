@@ -10,15 +10,19 @@ import Foundation
 import SwiftyJSON
 
 struct InLineFor {
+    let id: Int
     let restaurant: Restaurant
     let personalEstimatedSeatingTime: NSDate
     
-    init(restaurant: Restaurant, personalEstimatedSeatingTime: NSDate) {
+    init(id: Int, restaurant: Restaurant, personalEstimatedSeatingTime: NSDate) {
+        self.id = id
         self.restaurant = restaurant
         self.personalEstimatedSeatingTime = personalEstimatedSeatingTime
     }
     
     init(json: JSON, restaurantsList: [Restaurant]) {
+        let id = json["id"].intValue
+        
         let restaurantID = json["restaurant_id"].intValue
         let restaurant = restaurantsList.filter { $0.id == restaurantID }[0]
         
@@ -26,7 +30,8 @@ struct InLineFor {
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
         let time = formatter.dateFromString(json["personalEstimatedSeatingTime"].string!)!
         
-        self.init(restaurant: restaurant,
+        self.init(id: id,
+                  restaurant: restaurant,
                   personalEstimatedSeatingTime: time)
     }
     

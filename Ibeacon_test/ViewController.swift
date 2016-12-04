@@ -18,6 +18,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
     let myBTManager = CBPeripheralManager()
     var lastStage = CLProximity.Unknown
     
+    let dataStore = DataStore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
