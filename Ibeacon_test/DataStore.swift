@@ -62,18 +62,16 @@ class DataStore {
     func updateRestaurant(restaurant: Restaurant, completionHandler: (() -> Void)?) {
         serverRequestor.getRestaurant(restaurant.id) { json, error in
             let updatedRestaurant = self.jsonParser.parseRestaurant(json!)
-            var resultRestaurant = restaurant // this will hold the final result that is returned
+            let resultRestaurant = restaurant // this will hold the final result that is returned
             
-            // Specifically checking and updating the wait times only
+            //// Specifically checking and updating the wait times only
             
-            //// check general time updated
-            //// check personal time null
-            //// check personal time updated
-            //// NOTE: time that is in the future is an update, any time before now is NOT
+            // Check if general time was updated
             if self.timeWasUpdated(restaurant.generalEstimatedSeatingTime, newTime: updatedRestaurant.generalEstimatedSeatingTime) {
                 resultRestaurant.generalEstimatedSeatingTime = updatedRestaurant.generalEstimatedSeatingTime
             }
             
+            // Check if personal time is updated
             if restaurant.personal_estimated_seating_time == nil && updatedRestaurant.personal_estimated_seating_time != nil {
                 // if there has been a reservation made since last time
                 resultRestaurant.personal_estimated_seating_time = updatedRestaurant.personal_estimated_seating_time
@@ -85,6 +83,7 @@ class DataStore {
             else {
                 if let oldPersonal = restaurant.personal_estimated_seating_time,
                     newPersonal = updatedRestaurant.personal_estimated_seating_time {
+                    // if the time was updated since last
                     if self.timeWasUpdated(oldPersonal, newTime: newPersonal) {
                         resultRestaurant.personal_estimated_seating_time = updatedRestaurant.personal_estimated_seating_time
                     }
@@ -97,6 +96,14 @@ class DataStore {
                 completionHandler!()
             }
         }
+    }
+    
+    func updateMakeReservation(restaurant: Restaurant, completionHandler: (() -> Void)?) {
+        // TODO
+    }
+    
+    func updateCancelReservation(completionHandler: (() -> Void)?) {
+        // TODO
     }
     
     private func timeWasUpdated(oldTime: NSDate, newTime: NSDate) -> Bool {
