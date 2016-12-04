@@ -13,6 +13,7 @@ import CoreBluetooth
 class ViewController: UIViewController, CBPeripheralManagerDelegate {
     
     @IBOutlet weak var beaconStatus: UILabel!
+    let dataStore = DataStore()
     
     let locationManager = CLLocationManager()
     let myBTManager = CBPeripheralManager()
@@ -21,20 +22,25 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib.
         // Define in iBeacon.swift
         self.setupBeacon()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
+//    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [AnyObject], inRegion region: CLBeaconRegion) {
+//        print(beacons)
+//    }
     
+    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
         
         if peripheral.state == CBPeripheralManagerState.PoweredOff {
             
             simpleAlert("Beacon", message: "Turn On Your Device Bluetooh")
         }        
-    }
 }
