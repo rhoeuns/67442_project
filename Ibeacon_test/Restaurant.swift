@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Restaurant {
+class Restaurant {
     let id: Int
     let name: String
     let description: String
@@ -20,8 +20,8 @@ struct Restaurant {
     let longitude: Float
     let time_open: String
     let time_closed: String
-    let generalEstimatedSeatingTime: NSDate
-    let personal_estimated_seating_time: NSDate?
+    var generalEstimatedSeatingTime: NSDate
+    var personal_estimated_seating_time: NSDate?
     
     init(id: Int, name: String, description: String, phone: String, picture: String,
          address: String, latitude: Float, longitude: Float, time_open: String, time_closed: String,
@@ -40,7 +40,7 @@ struct Restaurant {
         self.personal_estimated_seating_time = personal_estimated_seating_time
     }
     
-    init(json: JSON) {
+    convenience init(json: JSON) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
 //        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss-ZZZZZ"
