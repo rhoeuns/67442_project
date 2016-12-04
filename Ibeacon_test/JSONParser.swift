@@ -10,15 +10,26 @@ import Foundation
 import SwiftyJSON
 
 class JSONParser {
-    func parseJSON(data: JSON) -> ([Restaurant], [InLineFor]) {
-        let restaurantModels = data["restaurants"].map { _, subJSON in
-            return Restaurant(json: subJSON)
-        }
-        
-        let inLineForModels = data["inLineFor"].map { _, subJSON in
-            return InLineFor(json: subJSON, restaurantsList: restaurantModels)
+    func parseRestaurants(data: JSON) -> [Restaurant] {
+        let restaurantModels = data["restaurants"].map { _, restaurantJSON in
+            return Restaurant(json: restaurantJSON)
         }
 
-        return (restaurantModels, inLineForModels)
+        return restaurantModels
     }
+    
+    func parseRestaurant(data: JSON) -> Restaurant {
+        let restaurantJSON = data["restaurant"]
+        return Restaurant(json: restaurantJSON)
+    }
+    
+    func parseMakeReservationResponse(data: JSON) -> NSDate? {
+        if let dateString = data["personal_estimated_seating_time"].string {
+            return DateParser().parseDate(dateString)
+        }
+        else {
+            return nil
+        }
+    }
+
 }

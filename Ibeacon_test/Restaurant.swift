@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Restaurant {
+class Restaurant {
     let id: Int
     let name: String
     let description: String
@@ -20,11 +20,12 @@ struct Restaurant {
     let longitude: Float
     let time_open: String
     let time_closed: String
-    let generalEstimatedSeatingTime: NSDate
+    var generalEstimatedSeatingTime: NSDate
+    var personal_estimated_seating_time: NSDate?
     
     init(id: Int, name: String, description: String, phone: String, picture: String,
          address: String, latitude: Float, longitude: Float, time_open: String, time_closed: String,
-         generalEstimatedSeatingTime: NSDate) {
+         generalEstimatedSeatingTime: NSDate, personal_estimated_seating_time: NSDate?) {
         self.id = id
         self.name = name
         self.description = description
@@ -36,19 +37,29 @@ struct Restaurant {
         self.time_open = time_open
         self.time_closed = time_closed
         self.generalEstimatedSeatingTime = generalEstimatedSeatingTime
+        self.personal_estimated_seating_time = personal_estimated_seating_time
     }
     
-    init(json: JSON) {
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        let time = formatter.dateFromString(json["generalEstimatedSeatingTime"].string!)!
+    convenience init(json: JSON) {
+        let dateParser = DateParser()
         
+        let general_time = dateParser.parseDate(json["general_estimated_seating_time"].string!)
+        
+        var personal_time: NSDate?
+        if let personal_time_string = json["personal_estimated_seating_time"].string {
+            personal_time = dateParser.parseDate(personal_time_string)
+        }
+        else {
+            personal_time = nil
+        }
+
         self.init(id: json["id"].int!, name: json["name"].string!,
                   description: json["description"].string!,
                   phone: json["phone"].string!, picture: json["picture"].string!,
                   address: json["address"].string!, latitude: Float(json["latitude"].double!),
                   longitude: Float(json["longitude"].double!), time_open: json["time_open"].string!,
-                  time_closed: json["time_closed"].string!, generalEstimatedSeatingTime: time)
+                  time_closed: json["time_closed"].string!, generalEstimatedSeatingTime: general_time,
+                  personal_estimated_seating_time: personal_time)
     }
     
     /**
@@ -60,4 +71,5 @@ struct Restaurant {
     func waitTime() -> NSTimeInterval {
         return generalEstimatedSeatingTime.timeIntervalSinceNow
     }
+
 }
