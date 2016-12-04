@@ -180,6 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */,
+				841ECEF51DE22EF8000AE3B6 /* Parsers */,
+				841ECEF31DE22E24000AE3B6 /* Data */,
+				841ECEF01DE18A7B000AE3B6 /* Network */,
 				842AF1171DDFB33F00A35D81 /* Models */,
 				A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */,
 				A9988A2E1DD0AE4A0028108E /* ViewController.swift */,
@@ -504,8 +507,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */,
+				841ECEF71DE22F14000AE3B6 /* DataStore.swift in Sources */,
 				A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */,
 				A91DD8561DF234D2005B4E8B /* NBRestaurantViewController.swift in Sources */,
+				841ECEF91DE22F27000AE3B6 /* JSONParser.swift in Sources */,
 				A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */,
 				842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */,
 				842AF11B1DDFB85300A35D81 /* InLineFor.swift in Sources */,
