@@ -176,6 +176,11 @@ extension ViewController: CLLocationManagerDelegate {
                     makeString += "Distance From iBeacon = \(proximityMessage)"
                     
                     self.beaconStatus.text = makeString
+                    if proximityMessage == "Very close"{
+                        let alert = UIAlertController(title: "Error", message: "Do you want to hop in the line for Union Grill?" , preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                        presentViewController(alert, animated: true, completion: nil)
+                    }
                 }
             }
         }
