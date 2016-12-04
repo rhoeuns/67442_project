@@ -22,9 +22,9 @@ class DataStore {
      
      - Parameter completionHandler: Optional callback that is called after data is returned and parsed.
      */
-    func fetchServerData(completionHandler: (() -> Void)?) {
-        serverRequestor.getRestaurants(storeResults(completionHandler))
-    }
+//    func fetchServerData(completionHandler: (() -> Void)?) {
+//        serverRequestor.getRestaurants(storeResults(completionHandler))
+//    }
     
     /**
      Creates a function to be the completion handler.
@@ -34,18 +34,18 @@ class DataStore {
      
      - Returns: A function that will be the completion handler for JSONParser
      */
-    private func storeResults(completionHandler: (() -> Void)?) -> (JSON?, NSError?) -> Void {
-        return { json, error in
-            
-            let restaurants = self.jsonParser.parseRestaurants(json!)
-            
-            self.restaurants = restaurants
-            
-            if completionHandler != nil {
-                completionHandler!()
-            }
-        }
-    }
+//    private func storeResults(completionHandler: (() -> Void)?) -> (JSON?, NSError?) -> Void {
+//        return { json, error in
+//            
+//            let restaurants = self.jsonParser.parseRestaurants(json!)
+//            
+//            self.restaurants = restaurants
+//            
+//            if completionHandler != nil {
+//                completionHandler!()
+//            }
+//        }
+//    }
     
     
     func updateRestaurants(completionHandler: (() -> Void)?) {
@@ -98,12 +98,36 @@ class DataStore {
         }
     }
     
-    func updateMakeReservation(restaurant: Restaurant, completionHandler: (() -> Void)?) {
-        // TODO
+    func updateMakeReservation(restaurant: Restaurant, party_size: Int, completionHandler: (() -> Void)?) {
+        serverRequestor.makeReservation(restaurant.id, party_size: party_size) { json, error in
+            if let _ = error {
+                // TODO: not sure what to do when error happens
+            }
+            else if let json = json {
+                let personalTime = self.jsonParser.parseMakeReservationResponse(json)
+                restaurant.personal_estimated_seating_time = personalTime
+                
+                if completionHandler != nil {
+                    completionHandler!()
+                }
+            }
+        }
     }
     
-    func updateCancelReservation(completionHandler: (() -> Void)?) {
-        // TODO
+    func updateCancelReservation(restaurant: Restaurant, completionHandler: (() -> Void)?) {
+        serverRequestor.cancelReservation() { json, error in
+            if let _ = error {
+                // TODO: not sure what to do when error happens
+            }
+            else {
+                // There is no body, so nothing to parse here.
+                restaurant.personal_estimated_seating_time = nil
+                
+                if completionHandler != nil {
+                    completionHandler!()
+                }
+            }
+        }
     }
     
     private func timeWasUpdated(oldTime: NSDate, newTime: NSDate) -> Bool {

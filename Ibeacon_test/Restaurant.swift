@@ -41,16 +41,13 @@ class Restaurant {
     }
     
     convenience init(json: JSON) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss-ZZZZZ"
-        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let dateParser = DateParser()
         
-        let general_time = dateFormatter.dateFromString(json["general_estimated_seating_time"].string!)!
+        let general_time = dateParser.parseDate(json["general_estimated_seating_time"].string!)
         
         var personal_time: NSDate?
         if let personal_time_string = json["personal_estimated_seating_time"].string {
-            personal_time = dateFormatter.dateFromString(personal_time_string)!
+            personal_time = dateParser.parseDate(personal_time_string)
         }
         else {
             personal_time = nil
@@ -74,4 +71,5 @@ class Restaurant {
     func waitTime() -> NSTimeInterval {
         return generalEstimatedSeatingTime.timeIntervalSinceNow
     }
+
 }
