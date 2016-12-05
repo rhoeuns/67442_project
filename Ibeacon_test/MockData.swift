@@ -51,8 +51,8 @@ class MockData {
  "longitude": -79.948529,
  "time_open": "11:30am",
  "time_closed": "10pm",
- "generalEstimatedSeatingTime": "2016/11/18 22:05",
- "personalEstimatedSeatingTime": "2016/11/18 21:55"
+ "general_estimated_seating_time": "2016/11/18 22:05",
+ "personal_estimated_seating_time": "2016/11/18 21:55"
  },
  {
  "id": 2,
@@ -65,8 +65,8 @@ class MockData {
  "longitude": -79.953102,
  "time_open": "11am",
  "time_closed": "11pm",
- "generalEstimatedSeatingTime": "2016/11/18 21:45",
- "personalEstimatedSeatingTime": null
+ "general_estimated_seating_time": "2016/11/18 21:45",
+ "personal_estimated_seating_time": null
  }
  ]
 
