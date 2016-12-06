@@ -27,6 +27,15 @@ class NBRestaurantViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+//        let oneHourFromNow = NSDate(timeIntervalSinceNow: 3600)
+//        let timer = Timer(date: oneHourFromNow)
+//        timer.countdownTilSeating()
+//        timer.loop() {
+//            print("loop~")
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {
