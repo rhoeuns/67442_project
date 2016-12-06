@@ -130,6 +130,20 @@ class DataStore {
         }
     }
     
+    func findReservedRestaurant() -> Restaurant? {
+        // Should only ever have one reservation at a time.
+        let myReservations = restaurants.filter{
+            $0.personal_estimated_seating_time != nil
+        }
+        
+        if (myReservations.count > 0) {
+            return myReservations[0]
+        }
+        else {
+            return nil
+        }
+    }
+    
     private func timeWasUpdated(oldTime: NSDate, newTime: NSDate) -> Bool {
         if oldTime.timeIntervalSinceNow < 0 && newTime.timeIntervalSinceNow < 0 {
             // if both times are earlier than the current date and time
