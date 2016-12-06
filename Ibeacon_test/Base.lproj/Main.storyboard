@@ -1,57 +1,79 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5ey-DF-WWd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="5ey-DF-WWd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--My Queue-->
         <scene sceneID="Ecf-oe-mfX">
             <objects>
-                <viewController id="1HY-BJ-1tg" sceneMemberID="viewController">
+                <viewController id="1HY-BJ-1tg" customClass="QueueViewController" customModule="Ibeacon_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hky-A2-rBy"/>
                         <viewControllerLayoutGuide type="bottom" id="gTB-uM-sS5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hko-fU-tRV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thank you for reserving at " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpG-My-Ydj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thank you for reserving at " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpG-My-Ydj">
                                 <rect key="frame" x="58" y="55" width="205" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your wait time is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaN-UJ-R7S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your wait time is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaN-UJ-R7S">
                                 <rect key="frame" x="95" y="177" width="130" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0 : 00 : 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT8-1s-emE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0 : 00 : 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT8-1s-emE">
                                 <rect key="frame" x="38" y="219" width="245" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw0-ni-U28">
-                                <rect key="frame" x="38" y="379" width="132" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw0-ni-U28">
+                                <rect key="frame" x="67" y="379" width="132" height="30"/>
                                 <state key="normal" title="Cancel Reservation"/>
+                                <connections>
+                                    <action selector="CancelTapped:" destination="1HY-BJ-1tg" eventType="touchUpInside" id="ecF-ka-MB3"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63c-kd-hjf">
-                                <rect key="frame" x="233" y="379" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63c-kd-hjf">
+                                <rect key="frame" x="266" y="379" width="30" height="30"/>
                                 <state key="normal" title="Call"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="63c-kd-hjf" firstAttribute="leading" secondItem="Lw0-ni-U28" secondAttribute="trailing" constant="67" id="5vy-PQ-Hi4"/>
+                            <constraint firstItem="PpG-My-Ydj" firstAttribute="top" secondItem="hky-A2-rBy" secondAttribute="bottom" constant="35" id="KUd-Sq-tW9"/>
+                            <constraint firstItem="63c-kd-hjf" firstAttribute="top" secondItem="GT8-1s-emE" secondAttribute="bottom" constant="76" id="PCX-PA-xU1"/>
+                            <constraint firstItem="GT8-1s-emE" firstAttribute="centerX" secondItem="Hko-fU-tRV" secondAttribute="centerX" id="U81-tP-pXc"/>
                             <constraint firstItem="RaN-UJ-R7S" firstAttribute="centerX" secondItem="Hko-fU-tRV" secondAttribute="centerX" id="UD5-6H-to4"/>
+                            <constraint firstItem="GT8-1s-emE" firstAttribute="top" secondItem="PpG-My-Ydj" secondAttribute="bottom" constant="143" id="VO0-nX-bG1"/>
+                            <constraint firstItem="Lw0-ni-U28" firstAttribute="leading" secondItem="Hko-fU-tRV" secondAttribute="leadingMargin" constant="51" id="dat-Kg-Lcd"/>
+                            <constraint firstItem="Lw0-ni-U28" firstAttribute="top" secondItem="GT8-1s-emE" secondAttribute="bottom" constant="76" id="ehk-y4-M2Y"/>
                             <constraint firstItem="PpG-My-Ydj" firstAttribute="centerX" secondItem="Hko-fU-tRV" secondAttribute="centerX" id="gbH-Cd-Lin"/>
+                            <constraint firstItem="RaN-UJ-R7S" firstAttribute="top" secondItem="PpG-My-Ydj" secondAttribute="bottom" constant="101" id="wHC-mn-UNL"/>
                             <constraint firstItem="GT8-1s-emE" firstAttribute="centerX" secondItem="RaN-UJ-R7S" secondAttribute="centerX" id="wV1-PN-GDU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Queue" id="UVM-KX-mLz"/>
+                    <connections>
+                        <outlet property="ActualWaitingTime" destination="GT8-1s-emE" id="Cll-x5-KXo"/>
+                        <outlet property="CallButton" destination="63c-kd-hjf" id="e09-y1-13B"/>
+                        <outlet property="CancelButton" destination="Lw0-ni-U28" id="BG0-Ee-H2I"/>
+                        <outlet property="thankYouMessage" destination="PpG-My-Ydj" id="xEo-va-NoV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrg-aD-4vK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,19 +84,19 @@
             <objects>
                 <tableViewController id="V6r-UI-v89" customClass="NBRestaurantViewController" customModule="Ibeacon_test" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pmk-Ri-mKp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RestaurantCell" textLabel="aFM-s8-xEg" style="IBUITableViewCellStyleDefault" id="87V-lf-446">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="87V-lf-446" id="Th9-Fs-j0t">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aFM-s8-xEg">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -89,7 +111,17 @@
                             <outlet property="delegate" destination="V6r-UI-v89" id="0tK-Jz-Vcz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Near By Restaurants" id="Gtk-2H-zNe"/>
+                    <navigationItem key="navigationItem" title="Near By Restaurants" id="Gtk-2H-zNe">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="vyA-kr-UhH">
+                            <connections>
+                                <action selector="refreshTapped:" destination="V6r-UI-v89" id="mGr-gh-BE7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="refreshButton" destination="vyA-kr-UhH" id="brr-x7-xPP"/>
+                        <outlet property="restaurantTableView" destination="Pmk-Ri-mKp" id="UDk-J5-wqe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AI-DO-Q8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +134,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="deL-3k-1Wz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Qby-Dp-k6F" kind="relationship" relationship="viewControllers" id="OZS-KN-qXA"/>
@@ -134,4 +166,9 @@
             <point key="canvasLocation" x="555" y="-929"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

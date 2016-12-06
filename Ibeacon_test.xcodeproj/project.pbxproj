@@ -12,6 +12,7 @@
 		841ECEF71DE22F14000AE3B6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF61DE22F14000AE3B6 /* DataStore.swift */; };
 		841ECEF91DE22F27000AE3B6 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF81DE22F27000AE3B6 /* JSONParser.swift */; };
 		841ECEFB1DF40DE2000AE3B6 /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEFA1DF40DE2000AE3B6 /* DateParser.swift */; };
+		841ECEFD1DF68B64000AE3B6 /* QueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEFC1DF68B64000AE3B6 /* QueueViewController.swift */; };
 		842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF1181DDFB35900A35D81 /* Restaurant.swift */; };
 		842AF11D1DDFC47F00A35D81 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11C1DDFC47F00A35D81 /* MockData.swift */; };
 		A84D1FAD51FD754AA8744E32 /* Pods_Ibeacon_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3C256EC68D0ED490695174 /* Pods_Ibeacon_testUITests.framework */; };
@@ -56,6 +57,7 @@
 		841ECEF61DE22F14000AE3B6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		841ECEF81DE22F27000AE3B6 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		841ECEFA1DF40DE2000AE3B6 /* DateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
+		841ECEFC1DF68B64000AE3B6 /* QueueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueViewController.swift; sourceTree = "<group>"; };
 		842AF1181DDFB35900A35D81 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		842AF11C1DDFC47F00A35D81 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */,
 				A9988A2E1DD0AE4A0028108E /* ViewController.swift */,
 				A9988A301DD0AE4A0028108E /* Main.storyboard */,
+				841ECEFC1DF68B64000AE3B6 /* QueueViewController.swift */,
 				A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */,
 				A9988A331DD0AE4A0028108E /* Assets.xcassets */,
 				A9988A351DD0AE4A0028108E /* LaunchScreen.storyboard */,
@@ -526,6 +529,7 @@
 				842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */,
 				842AF11D1DDFC47F00A35D81 /* MockData.swift in Sources */,
 				841ECEFB1DF40DE2000AE3B6 /* DateParser.swift in Sources */,
+				841ECEFD1DF68B64000AE3B6 /* QueueViewController.swift in Sources */,
 				A95EB42B1DF68C5800ED37D3 /* Timer.swift in Sources */,
 				841ECEF21DE18CFE000AE3B6 /* ServerRequestor.swift in Sources */,
 			);
