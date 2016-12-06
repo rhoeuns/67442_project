@@ -10,10 +10,17 @@ import UIKit
 
 class NBRestaurantViewController: UITableViewController {
 
-    var restaurants:[Restaurant] = MockData.init().restaurants
+    @IBOutlet var restaurantTableView: UITableView!
+    var dataStore = DataStore()
+    
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let restaurants = dataStore.restaurants
+        dataStore.updateRestaurants() {
+            self.restaurantTableView.reloadData()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,16 +43,22 @@ class NBRestaurantViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return restaurants.count
+        return dataStore.restaurants.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
         -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath)
             
-            let restaurant = restaurants[indexPath.row] as Restaurant
+            let restaurant = dataStore.restaurants[indexPath.row] as Restaurant
             cell.textLabel?.text = restaurant.name
             return cell
+    }
+
+    @IBAction func refreshTapped(sender: AnyObject) {
+        dataStore.updateRestaurants() {
+            self.restaurantTableView.reloadData()
+        }
     }
 
     /*
