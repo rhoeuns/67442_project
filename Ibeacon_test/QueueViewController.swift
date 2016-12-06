@@ -32,6 +32,12 @@ class QueueViewController: UIViewController {
     
 
     @IBAction func CancelTapped(sender: UIButton) {
+        if let myReservation = self.myReservation{
+            dataStore.updateCancelReservation(myReservation[0], completionHandler: nil)
+        }
+        findReservedRestaurant()
+        //Todo: make a update labels function
+        
     }
     
     private func findReservedRestaurant(){
@@ -41,11 +47,17 @@ class QueueViewController: UIViewController {
             if let myReservation = self.myReservation {
                 if (myReservation.count > 0) {
                     self.thankYouMessage.text = "Thank you for reserving at \(myReservation[0].name)"
+                    self.ActualWaitingTime.text = "\(myReservation[0].personal_estimated_seating_time)"
                 }
             }
         }
     }
     
+    private func calculateTime(){
+        let date = NSDate()
+        let calender = NSCalendar.currentCalendar()
+        let components = calender.components([.Hour, .Minute], fromDate: date)
+    }
     /*
     // MARK: - Navigation
 
