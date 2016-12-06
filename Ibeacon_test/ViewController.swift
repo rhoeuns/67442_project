@@ -25,6 +25,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         // Define in iBeacon.swift
         self.setupBeacon()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,10 +38,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
 //    }
     
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
-    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
         
         if peripheral.state == CBPeripheralManagerState.PoweredOff {
             
             simpleAlert("Beacon", message: "Turn On Your Device Bluetooh")
-        }        
+        }
+    }
 }
