@@ -17,6 +17,7 @@ class Beacon: NSObject, CLLocationManagerDelegate {
     var lastStage = CLProximity.Unknown
     var beaconStatus: UILabel?
 
+    var callback: ([CLBeacon] -> Void)? = nil
     
     func setupBeacon() {
         
@@ -141,56 +142,35 @@ class Beacon: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    //// THIS IS THE ONE THAT DOES THE STUFF WE WANT!
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion)
     {
         // Tells the delegate that one or more beacons are in range.
         let foundBeacons = beacons
         
-        if foundBeacons.count > 0 {
-            
-            if let closestBeacon = foundBeacons[0] as? CLBeacon {
+//        print("inside locationManager, num beacons is \(foundBeacons.count)")
+        let nearbyBeacons = foundBeacons.filter { beacon in
+            print("this beacon's proximity is \(beacon.proximity)")
+            switch  beacon.proximity {
                 
-                var proximityMessage: String!
-                if lastStage != closestBeacon.proximity {
-                    
-                    lastStage = closestBeacon.proximity
-                    
-                    switch  lastStage {
-                        
-                    case .Immediate:
-                        proximityMessage = "Very close"
-                        viewController!.view.backgroundColor = UIColor.greenColor()
-                        
-                    case .Near:
-                        proximityMessage = "Near"
-                        viewController!.view.backgroundColor = UIColor.grayColor()
-                        
-                    case .Far:
-                        proximityMessage = "Far"
-                        viewController!.view.backgroundColor = UIColor.blackColor()
-                        
-                    default:
-                        proximityMessage = "Where's the beacon?"
-                        viewController!.view.backgroundColor = UIColor.redColor()
-                        
-                    }
-                    var makeString = "Beacon Details:n"
-                    makeString += "UUID = \(closestBeacon.proximityUUID.UUIDString)n"
-                    makeString += "Identifier = \(region.identifier)n"
-                    makeString += "Major Value = \(closestBeacon.major.intValue)n"
-                    makeString += "Minor Value = \(closestBeacon.minor.intValue)n"
-                    makeString += "Distance From iBeacon = \(proximityMessage)"
-                    
-                    self.beaconStatus!.text = makeString
-                    if proximityMessage == "Very close"{
-                        let alert = UIAlertController(title: "Hi, there!", message: "Do you want to hop in the line for Union Grill?" , preferredStyle: .Alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-                        viewController!.presentViewController(alert, animated: true, completion: nil)
-                    }
-                }
+            case .Immediate:
+                print("this beacon's proximity is IMMEDIATE")
+                return true
+            case .Near:
+                print("this beacon's proximity is NEAR")
+                return true
+            case .Far:
+                print("this beacon's proximity is FAR")
+                return false
+            default:
+                print("this beacon's proximity is DEFAULT")
+                return false
             }
         }
+        
+        if let callback = callback {
+            callback(nearbyBeacons)
+        }
     }
-    
-    
+
 }

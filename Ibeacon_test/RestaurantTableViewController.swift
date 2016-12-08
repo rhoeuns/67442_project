@@ -11,6 +11,9 @@ import UIKit
 class RestaurantTableViewController: UITableViewController {
     
     var dataStore = DataStore()
+    var timer: NSTimer?
+    var beaconManager: Beacon?
+    var nearbyBeacons = [CLBeacon]()
     
     @IBOutlet var restaurantTableView: UITableView!
     
@@ -29,6 +32,24 @@ class RestaurantTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        beaconManager = Beacon()
+        beaconManager?.setupBeacon()
+        beaconManager?.callback = { beacons in
+            self.nearbyBeacons = beacons
+        }
+        
+        self.timer = Timer().loop(interval: 3.0) {
+            self.reloadDataAndTable()
+            print("loop")
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        timer?.invalidate()
+        timer = nil
     }
     
     // MARK: - Table view data source
@@ -100,6 +121,12 @@ class RestaurantTableViewController: UITableViewController {
     //    detailsView.imgName = self.dataStore.restaurants[(index.row!)].url
         detailsView.name = "Union Grill"
         detailsView.imgName = "cat.png"
+    }
+    
+    func reloadDataAndTable() {
+        dataStore.updateRestaurants() {
+            self.restaurantTableView.reloadData()
+        }
     }
     
 
