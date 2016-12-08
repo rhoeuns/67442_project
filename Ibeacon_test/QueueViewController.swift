@@ -54,7 +54,7 @@ class QueueViewController: UIViewController {
     @IBAction func canceltapped(sender: UIButton) {
         if let reservation = dataStore.findReservedRestaurant() {
             dataStore.updateCancelReservation(reservation) {
-                self.updateLabels(reservation)
+                self.updateLabelsForNoReservation()
             }
         }
     }
