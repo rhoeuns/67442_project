@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="5IK-qb-24k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="5IK-qb-24k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -135,33 +135,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thank you message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neR-OC-bfY">
-                                <rect key="frame" x="38" y="71" width="300" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neR-OC-bfY">
+                                <rect key="frame" x="119.5" y="71" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjW-oW-H7g">
-                                <rect key="frame" x="166" y="269" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjW-oW-H7g">
+                                <rect key="frame" x="163.5" y="218" width="50" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA0-3c-3I6">
-                                <rect key="frame" x="43" y="410" width="132" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel Reservation"/>
-                                <connections>
-                                    <action selector="canceltapped:" destination="dkw-h7-97R" eventType="touchUpInside" id="efB-lg-5dJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpS-XK-oPu">
-                                <rect key="frame" x="251" y="410" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Call"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your waiting status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARa-Rp-r0e">
-                                <rect key="frame" x="37.5" y="173" width="300" height="21"/>
+                                <rect key="frame" x="38" y="173" width="300" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="beM-Q0-72Q"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="263" id="dcT-kc-RMz"/>
@@ -170,12 +157,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA0-3c-3I6">
+                                <rect key="frame" x="121" y="568" width="132" height="30"/>
+                                <state key="normal" title="Cancel Reservation"/>
+                                <connections>
+                                    <action selector="canceltapped:" destination="dkw-h7-97R" eventType="touchUpInside" id="efB-lg-5dJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="neR-OC-bfY" firstAttribute="top" secondItem="pGZ-1z-zaI" secondAttribute="bottom" constant="51" id="00L-C5-8LG"/>
                             <constraint firstItem="ARa-Rp-r0e" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="1fC-Bg-JFU"/>
+                            <constraint firstItem="vjW-oW-H7g" firstAttribute="top" secondItem="ARa-Rp-r0e" secondAttribute="bottom" constant="24" id="8Nr-rb-zQc"/>
                             <constraint firstItem="ARa-Rp-r0e" firstAttribute="top" secondItem="neR-OC-bfY" secondAttribute="bottom" constant="81" id="PhV-14-F86"/>
+                            <constraint firstItem="vA0-3c-3I6" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="ju0-Re-lFZ"/>
+                            <constraint firstItem="a5A-NQ-l8a" firstAttribute="top" secondItem="vA0-3c-3I6" secondAttribute="bottom" constant="20" id="k4k-BG-ju3"/>
                             <constraint firstItem="ARa-Rp-r0e" firstAttribute="top" secondItem="pGZ-1z-zaI" secondAttribute="bottom" constant="153" id="mmJ-p2-y0h"/>
                             <constraint firstItem="neR-OC-bfY" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="u5S-yi-lwS"/>
                             <constraint firstItem="vjW-oW-H7g" firstAttribute="centerX" secondItem="ARa-Rp-r0e" secondAttribute="centerX" id="zK7-4y-qxj"/>
@@ -184,7 +181,6 @@
                     <tabBarItem key="tabBarItem" title="Queue" id="jEM-rG-aYI"/>
                     <connections>
                         <outlet property="ActualWaitingTime" destination="vjW-oW-H7g" id="8gb-5z-XPs"/>
-                        <outlet property="CallButton" destination="jpS-XK-oPu" id="oys-ub-hDV"/>
                         <outlet property="CancelButton" destination="vA0-3c-3I6" id="DE5-DB-Ttd"/>
                         <outlet property="status" destination="ARa-Rp-r0e" id="d7U-WF-KFD"/>
                         <outlet property="thankYouMessage" destination="neR-OC-bfY" id="os4-lB-3l6"/>
