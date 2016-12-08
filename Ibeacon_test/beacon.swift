@@ -97,7 +97,7 @@ class Beacon: NSObject, CLLocationManagerDelegate {
         
         // Tells the delegate that the user entered in iBeacon range or area.
         
-        simpleAlert("Welcom", message: "Welcome to our store")
+        simpleAlert("Welcome", message: "Welcome to our store")
         
         // This method called because
         // beaconRegion.notifyOnEntry = true

@@ -37,6 +37,7 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         beaconManager = Beacon()
         beaconManager?.setupBeacon()
+        beaconManager?.viewController = self
         beaconManager?.callback = { beacons in
             self.nearbyBeacons = beacons
         }
