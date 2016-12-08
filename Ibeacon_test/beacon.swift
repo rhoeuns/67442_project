@@ -93,27 +93,27 @@ class Beacon: NSObject, CLLocationManagerDelegate {
     }
     
     
-    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        
-        // Tells the delegate that the user entered in iBeacon range or area.
-        
-        simpleAlert("Welcome", message: "Welcome to our store")
-        
-        // This method called because
-        // beaconRegion.notifyOnEntry = true
-        // in setupBeacon() function
-    }
+//    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+//        
+//        // Tells the delegate that the user entered in iBeacon range or area.
+//        
+//        simpleAlert("Welcome", message: "Welcome to our store")
+//        
+//        // This method called because
+//        // beaconRegion.notifyOnEntry = true
+//        // in setupBeacon() function
+//    }
     
-    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        
-        // Tells the delegate that the user exit the iBeacon range or area.
-        
-        simpleAlert("Good Bye", message: "Have a nice day")
-        
-        // This method called because
-        // beaconRegion.notifyOnExit = true
-        // in setupBeacon() function
-    }
+//    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+//        
+//        // Tells the delegate that the user exit the iBeacon range or area.
+//        
+//        simpleAlert("Good Bye", message: "Have a nice day")
+//        
+//        // This method called because
+//        // beaconRegion.notifyOnExit = true
+//        // in setupBeacon() function
+//    }
     
     func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
         
