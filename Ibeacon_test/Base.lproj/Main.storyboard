@@ -174,8 +174,8 @@
                             <constraint firstItem="vA0-3c-3I6" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="ju0-Re-lFZ"/>
                             <constraint firstItem="a5A-NQ-l8a" firstAttribute="top" secondItem="vA0-3c-3I6" secondAttribute="bottom" constant="20" id="k4k-BG-ju3"/>
                             <constraint firstItem="ARa-Rp-r0e" firstAttribute="top" secondItem="pGZ-1z-zaI" secondAttribute="bottom" constant="153" id="mmJ-p2-y0h"/>
+                            <constraint firstItem="vjW-oW-H7g" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="sZa-6S-rHj"/>
                             <constraint firstItem="neR-OC-bfY" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="u5S-yi-lwS"/>
-                            <constraint firstItem="vjW-oW-H7g" firstAttribute="centerX" secondItem="ARa-Rp-r0e" secondAttribute="centerX" id="zK7-4y-qxj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Queue" id="jEM-rG-aYI"/>
