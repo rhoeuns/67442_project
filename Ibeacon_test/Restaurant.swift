@@ -62,7 +62,7 @@ class Restaurant {
                   address: json["address"].string!, latitude: Float(json["latitude"].double!),
                   longitude: Float(json["longitude"].double!), time_open: json["time_open"].string!,
                   time_closed: json["time_closed"].string!, generalEstimatedSeatingTime: general_time,
-                  personal_estimated_seating_time: personal_time, position_in_line: json["position_in_line"].int!)
+                  personal_estimated_seating_time: personal_time, position_in_line: json["position_in_line"].int)
     }
     
     /**
