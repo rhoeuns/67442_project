@@ -55,6 +55,9 @@ class QueueViewController: UIViewController {
         if let reservation = dataStore.findReservedRestaurant() {
             dataStore.updateCancelReservation(reservation) {
                 self.updateLabelsForNoReservation()
+                
+                // Switch back to the table view
+                self.tabBarController?.selectedIndex = 0
             }
         }
     }
