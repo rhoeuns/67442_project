@@ -14,14 +14,24 @@ class QueueViewController: UIViewController {
     @IBOutlet weak var CancelButton: UIButton!
     @IBOutlet weak var CallButton: UIButton!
     @IBOutlet weak var ActualWaitingTime: UILabel!
+    @IBOutlet weak var status: UILabel!
     
     var timer: NSTimer?
-    
+    var haveReservation:Bool?
     var dataStore = DataStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if let reservation = self.dataStore.findReservedRestaurant(){
+            self.haveReservation = true
+            self.updateLabels(reservation)
+            
+        }
+        else{
+            self.updateLabelsForNoReservation()
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,8 +51,7 @@ class QueueViewController: UIViewController {
     }
 
     
-
-    @IBAction func CancelTapped(sender: UIButton) {
+    @IBAction func canceltapped(sender: UIButton) {
         if let reservation = dataStore.findReservedRestaurant() {
             dataStore.updateCancelReservation(reservation) {
                 self.updateLabels(reservation)
@@ -55,12 +64,33 @@ class QueueViewController: UIViewController {
             if let reservation = self.dataStore.findReservedRestaurant() {
                 self.updateLabels(reservation)
             }
+            else{
+                self.updateLabelsForNoReservation()
+            }
         }
     }
     
     private func updateLabels(myReservation: Restaurant) {
-        thankYouMessage.text = "Thank you for reserving at \(myReservation.name)"
-        ActualWaitingTime.text = "\(myReservation.personal_estimated_seating_time)"
+        if haveReservation == true{
+            self.thankYouMessage.text = "Thank you for reserving at \(myReservation.name)"
+            self.status.text = "Your waiting time is"
+            self.ActualWaitingTime.text = "\(myReservation.personal_estimated_seating_time)"
+            self.CancelButton.hidden = false
+            self.CallButton.hidden = false
+        }
+        else{
+            self.updateLabelsForNoReservation()
+            
+
+        }
+    }
+    
+    private func updateLabelsForNoReservation(){
+        self.thankYouMessage.text = ""
+        self.status.text = "You do not have any reservations"
+        self.ActualWaitingTime.text = ""
+        self.CancelButton.hidden = true
+        self.CallButton.hidden = true
     }
     
     private func calculateTime(){
