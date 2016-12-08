@@ -9,7 +9,10 @@
 import Foundation
 
 class Timer {
-    let date: NSDate
+    var date: NSDate? = nil
+    var count = 10
+    var callback: (() -> Void)?
+
     
     // create a timer, pass it a date
     // countdown function with a certain time interval
@@ -17,13 +20,11 @@ class Timer {
     
     // or I can have one function that is the timer for the reservation
     // and another function that handles
-    init(date: NSDate) {
-        self.date = date
-    }
+
     
-    func countdownTilSeating() {
-//        let userCalendar = NSCalendar.currentCalendar()
-//        let competitionDay = userCalendar.dateFromComponents(competitionDate)!
+    func countdownTilSeating(date: NSDate) {
+//        self.date = date
+        
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Hour, .Minute, .Second], fromDate: NSDate(), toDate: date, options: [])
 //        daysLabel.text = String(components.day)
@@ -37,18 +38,20 @@ class Timer {
         print(components.second)
         print("----------")
         
-        var _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "update", userInfo: nil, repeats: true)
+        var _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
 
     }
     
-    func loop(callbackHandler: () -> Void) -> NSTimer {
+    func loop(interval interval: Double, callbackHandler: () -> Void) -> NSTimer {
         callback = callbackHandler
-        let timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(runCallback), userInfo: nil, repeats: true)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: #selector(runCallback), userInfo: nil, repeats: true)
+        
+        // Fire immediately the first time
+        timer.fire()
         
         return timer
     }
     
-    var count = 10
     dynamic func update() {
         if(count > 0) {
             print(count)
@@ -56,8 +59,7 @@ class Timer {
         }
     }
     
-    var callback: (() -> Void)?
-    dynamic func runCallback(callbackHandler: () -> Void) {
+    dynamic func runCallback() {
         callback?()
     }
 }

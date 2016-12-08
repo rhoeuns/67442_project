@@ -15,12 +15,12 @@ class NBRestaurantViewController: UITableViewController {
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
+    var timer: NSTimer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let restaurants = dataStore.restaurants
-        dataStore.updateRestaurants() {
-            self.restaurantTableView.reloadData()
-        }
+        
+//        reloadDataAndTable()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,7 +35,18 @@ class NBRestaurantViewController: UITableViewController {
 //        timer.loop() {
 //            print("loop~")
 //        }
-        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.timer = Timer().loop(interval: 3.0) {
+            self.reloadDataAndTable()
+            print("loop")
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        timer?.invalidate()
+        timer = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +76,10 @@ class NBRestaurantViewController: UITableViewController {
     }
 
     @IBAction func refreshTapped(sender: AnyObject) {
+        reloadDataAndTable()
+    }
+    
+    func reloadDataAndTable() {
         dataStore.updateRestaurants() {
             self.restaurantTableView.reloadData()
         }
