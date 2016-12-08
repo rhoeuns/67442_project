@@ -15,8 +15,6 @@ class Beacon: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var viewController:UIViewController?
     var lastStage = CLProximity.Unknown
-    var beaconStatus: UILabel?
-
     var callback: ([CLBeacon] -> Void)? = nil
     
     func setupBeacon() {

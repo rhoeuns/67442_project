@@ -119,11 +119,16 @@ class RestaurantTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let detailsView:DetailsViewController=segue.destinationViewController as! DetailsViewController
     //    detailsView.name =  self.dataStore.restaurants[(index.row!)].name
     //    detailsView.imgName = self.dataStore.restaurants[(index.row!)].url
-        detailsView.name = "Union Grill"
-        detailsView.imgName = "cat.png"
+        if let indexPath = tableView.indexPathForSelectedRow{
+            let selectedRow = indexPath.row
+            let detailsView:DetailsViewController=segue.destinationViewController as! DetailsViewController
+            detailsView.restaurant = self.dataStore.restaurants[selectedRow] as Restaurant
+            detailsView.name = self.dataStore.restaurants[selectedRow].name
+            detailsView.imgName = self.dataStore.restaurants[selectedRow].picture
+            print("restaurant name is \(self.dataStore.restaurants[selectedRow].name)")
+        }
     }
     
     func reloadDataAndTable() {
