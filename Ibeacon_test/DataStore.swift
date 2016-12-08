@@ -59,6 +59,17 @@ class DataStore {
         }
     }
     
+    func updateRestaurants(uuids: [String], completionHandler: (() -> Void)?) {
+        serverRequestor.getRestaurants(uuids) { json, error in
+            let restaurants = self.jsonParser.parseRestaurants(json!)
+            self.restaurants = restaurants
+            
+            if completionHandler != nil {
+                completionHandler!()
+            }
+        }
+    }
+    
     func updateRestaurant(restaurant: Restaurant, completionHandler: (() -> Void)?) {
         serverRequestor.getRestaurant(restaurant.id) { json, error in
             let updatedRestaurant = self.jsonParser.parseRestaurant(json!)

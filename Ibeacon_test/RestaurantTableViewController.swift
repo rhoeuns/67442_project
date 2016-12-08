@@ -127,10 +127,18 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     func reloadDataAndTable() {
-        dataStore.updateRestaurants() {
+        var uuids = extractUUIDs(nearbyBeacons)
+        uuids.append("fakeUUID") // help populate w/ fake some fake restaurants
+        
+        dataStore.updateRestaurants(uuids) {
             self.restaurantTableView.reloadData()
         }
     }
     
+    func extractUUIDs(beacons: [CLBeacon]) -> [String] {
+        return beacons.map() { beacon in
+            return beacon.proximityUUID.UUIDString
+        }
+    }
 
 }
