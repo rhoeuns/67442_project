@@ -183,7 +183,7 @@ class Beacon: NSObject, CLLocationManagerDelegate {
                     
                     self.beaconStatus!.text = makeString
                     if proximityMessage == "Very close"{
-                        let alert = UIAlertController(title: "Error", message: "Do you want to hop in the line for Union Grill?" , preferredStyle: .Alert)
+                        let alert = UIAlertController(title: "Hi, there!", message: "Do you want to hop in the line for Union Grill?" , preferredStyle: .Alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                         viewController!.presentViewController(alert, animated: true, completion: nil)
                     }

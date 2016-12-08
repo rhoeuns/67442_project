@@ -168,8 +168,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is for becon test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njj-sb-1p8">
-                                <rect key="frame" x="107" y="323" width="161" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is for becon test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njj-sb-1p8">
+                                <rect key="frame" x="87" y="175" width="200" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Wkc-Ln-TEY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="sfJ-W4-TqZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -177,7 +181,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Njj-sb-1p8" firstAttribute="centerY" secondItem="CyF-Z8-TXa" secondAttribute="centerY" id="U9T-Kn-DcZ"/>
+                            <constraint firstItem="Njj-sb-1p8" firstAttribute="leading" secondItem="CyF-Z8-TXa" secondAttribute="leadingMargin" constant="71" id="1dM-HY-3ur"/>
+                            <constraint firstItem="Njj-sb-1p8" firstAttribute="top" secondItem="EHu-wX-FqH" secondAttribute="bottom" constant="155" id="EVB-ct-5b6"/>
                             <constraint firstItem="Njj-sb-1p8" firstAttribute="centerX" secondItem="CyF-Z8-TXa" secondAttribute="centerX" id="wnk-r9-qtg"/>
                         </constraints>
                     </view>
@@ -188,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENA-a1-Le3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="2570"/>
+            <point key="canvasLocation" x="959.5" y="2569.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
