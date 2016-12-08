@@ -3,8 +3,9 @@ iOS app for our 67-442 final project
 
 The backend server for this app is located [here](https://github.com/Ligerx/queue-api)
 
-#### Mock data from the placeholder json server
+### Mock data from the placeholder json server
 __I believe the data is outdated__
+
 mock-data.json
 
 Quick and dirty server to serve up JSON to our app for incremental development steps.
