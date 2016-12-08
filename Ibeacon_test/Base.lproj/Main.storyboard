@@ -152,7 +152,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel Reservation"/>
                                 <connections>
-                                    <action selector="canceltapped:" destination="dkw-h7-97R" eventType="touchUpInside" id="efB-lg-5dJ"/>
+                                    <action selector="canceltapped:" destination="dkw-h7-97R" eventType="touchUpInside" id="Sso-B2-SI8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpS-XK-oPu">
