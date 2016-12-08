@@ -17,21 +17,11 @@ class QueueViewController: UIViewController {
     @IBOutlet weak var status: UILabel!
     
     var timer: NSTimer?
-    var haveReservation:Bool?
     var dataStore = DataStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if let reservation = self.dataStore.findReservedRestaurant(){
-            self.haveReservation = true
-            self.updateLabels(reservation)
-            
-        }
-        else{
-            self.updateLabelsForNoReservation()
-        }
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,8 +29,8 @@ class QueueViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        self.timer = Timer().loop(interval: 3.0) {
+    override func viewWillAppear(animated: Bool) {
+        self.timer = Timer().loop(interval: 1.5) {
             self.reloadDataAndLabels()
         }
     }
@@ -71,16 +61,11 @@ class QueueViewController: UIViewController {
     }
     
     private func updateLabels(myReservation: Restaurant) {
-        if haveReservation == true{
-            self.thankYouMessage.text = "Thank you for reserving at \(myReservation.name)"
-            self.status.text = "Your waiting time is"
-            self.ActualWaitingTime.text = "\(myReservation.personal_estimated_seating_time)"
-            self.CancelButton.hidden = false
-            self.CallButton.hidden = false
-        }
-        else{
-            self.updateLabelsForNoReservation()
-        }
+        self.thankYouMessage.text = "Thank you for reserving at \(myReservation.name)"
+        self.status.text = "Your waiting time is"
+        self.ActualWaitingTime.text = "\(myReservation.personal_estimated_seating_time)"
+        self.CancelButton.hidden = false
+        self.CallButton.hidden = false
     }
     
     private func updateLabelsForNoReservation(){

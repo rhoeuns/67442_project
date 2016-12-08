@@ -19,9 +19,7 @@ class RestaurantTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dataStore.updateRestaurants() {
-            self.restaurantTableView.reloadData()
-        }
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -34,7 +32,7 @@ class RestaurantTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         beaconManager = Beacon()
         beaconManager?.setupBeacon()
         beaconManager?.viewController = self
@@ -44,7 +42,6 @@ class RestaurantTableViewController: UITableViewController {
         
         self.timer = Timer().loop(interval: 1.5) {
             self.reloadDataAndTable()
-            print("loop")
         }
     }
     
