@@ -12,7 +12,6 @@ class QueueViewController: UIViewController {
 
     @IBOutlet weak var thankYouMessage: UILabel!
     @IBOutlet weak var CancelButton: UIButton!
-    @IBOutlet weak var CallButton: UIButton!
     @IBOutlet weak var ActualWaitingTime: UILabel!
     @IBOutlet weak var status: UILabel!
     
@@ -55,7 +54,7 @@ class QueueViewController: UIViewController {
     @IBAction func canceltapped(sender: UIButton) {
         if let reservation = dataStore.findReservedRestaurant() {
             dataStore.updateCancelReservation(reservation) {
-                self.updateLabels(reservation)
+                self.updateLabelsForNoReservation()
             }
         }
     }
@@ -74,7 +73,6 @@ class QueueViewController: UIViewController {
         }
         
         self.CancelButton.hidden = false
-        self.CallButton.hidden = false
     }
     
     private func updateLabelsForNoReservation(){
@@ -82,7 +80,6 @@ class QueueViewController: UIViewController {
         self.status.text = "You do not have any reservations"
         self.ActualWaitingTime.text = ""
         self.CancelButton.hidden = true
-        self.CallButton.hidden = true
     }
     
     private func calculateTime(){
