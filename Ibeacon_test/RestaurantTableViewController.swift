@@ -41,7 +41,7 @@ class RestaurantTableViewController: UITableViewController {
             self.nearbyBeacons = beacons
         }
         
-        self.timer = Timer().loop(interval: 3.0) {
+        self.timer = Timer().loop(interval: 1.5) {
             self.reloadDataAndTable()
             print("loop")
         }
@@ -130,6 +130,7 @@ class RestaurantTableViewController: UITableViewController {
         var uuids = extractUUIDs(nearbyBeacons)
         uuids.append("fakeUUID") // help populate w/ fake some fake restaurants
         
+        print("Table view controller, uuids are \(uuids)")
         dataStore.updateRestaurants(uuids) {
             self.restaurantTableView.reloadData()
         }

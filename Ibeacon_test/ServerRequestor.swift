@@ -39,7 +39,8 @@ class ServerRequestor {
     
     func getRestaurants(uuids: [String], completionHandler: (JSON?, NSError?) -> ()) {
         let params: [String: AnyObject] = ["restaurants": ["uuids": uuids] ]
-
+        print("server requestor getRestaurants w/ uuids: \(uuids)")
+        
         Alamofire.request(.GET, endpoint, parameters: params)
             .responseJSON { response in
                 guard response.result.error == nil else {
