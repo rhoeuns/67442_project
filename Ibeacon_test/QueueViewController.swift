@@ -22,7 +22,7 @@ class QueueViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,15 +38,6 @@ class QueueViewController: UIViewController {
         timer?.invalidate()
         timer = nil
     }
-
-    
-    @IBAction func canceltapped(sender: UIButton) {
-        if let reservation = dataStore.findReservedRestaurant() {
-            dataStore.updateCancelReservation(reservation) {
-                self.updateLabels(reservation)
-            }
-        }
-    }
     
     private func reloadDataAndLabels(){
         dataStore.updateRestaurants(){
@@ -59,6 +50,15 @@ class QueueViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func canceltapped(sender: UIButton) {
+        if let reservation = dataStore.findReservedRestaurant() {
+            dataStore.updateCancelReservation(reservation) {
+                self.updateLabels(reservation)
+            }
+        }
+    }
+   
     private func updateLabels(myReservation: Restaurant) {
         self.thankYouMessage.text = "Thank you for reserving at \(myReservation.name)"
         self.status.text = "Your waiting time is"
@@ -89,13 +89,15 @@ class QueueViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
+    
+
