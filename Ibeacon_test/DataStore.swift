@@ -15,38 +15,6 @@ class DataStore {
     
     var restaurants = [Restaurant]()
 
-    /**
-     Fetches json data payload from the server.
-     Then parses the JSON into model objects that will be stored here.
-     You can include a callback that will run after parsing is complete.
-     
-     - Parameter completionHandler: Optional callback that is called after data is returned and parsed.
-     */
-//    func fetchServerData(completionHandler: (() -> Void)?) {
-//        serverRequestor.getRestaurants(storeResults(completionHandler))
-//    }
-    
-    /**
-     Creates a function to be the completion handler.
-     You can include a callback that will trigger afterwards.
-     
-     - Parameter completionHandler: Optional callback that is called after data is returned and parsed.
-     
-     - Returns: A function that will be the completion handler for JSONParser
-     */
-//    private func storeResults(completionHandler: (() -> Void)?) -> (JSON?, NSError?) -> Void {
-//        return { json, error in
-//            
-//            let restaurants = self.jsonParser.parseRestaurants(json!)
-//            
-//            self.restaurants = restaurants
-//            
-//            if completionHandler != nil {
-//                completionHandler!()
-//            }
-//        }
-//    }
-    
     
     func updateRestaurants(completionHandler: (() -> Void)?) {
         serverRequestor.getRestaurants() { json, error in
