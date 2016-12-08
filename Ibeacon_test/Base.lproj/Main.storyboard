@@ -141,7 +141,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjW-oW-H7g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjW-oW-H7g">
                                 <rect key="frame" x="166" y="269" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -175,10 +175,11 @@
                         <constraints>
                             <constraint firstItem="neR-OC-bfY" firstAttribute="top" secondItem="pGZ-1z-zaI" secondAttribute="bottom" constant="51" id="00L-C5-8LG"/>
                             <constraint firstItem="ARa-Rp-r0e" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="1fC-Bg-JFU"/>
+                            <constraint firstItem="vjW-oW-H7g" firstAttribute="top" secondItem="ARa-Rp-r0e" secondAttribute="bottom" constant="75" id="Blo-F8-SAc"/>
                             <constraint firstItem="ARa-Rp-r0e" firstAttribute="top" secondItem="neR-OC-bfY" secondAttribute="bottom" constant="81" id="PhV-14-F86"/>
                             <constraint firstItem="ARa-Rp-r0e" firstAttribute="top" secondItem="pGZ-1z-zaI" secondAttribute="bottom" constant="153" id="mmJ-p2-y0h"/>
+                            <constraint firstItem="vjW-oW-H7g" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="sZa-6S-rHj"/>
                             <constraint firstItem="neR-OC-bfY" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="u5S-yi-lwS"/>
-                            <constraint firstItem="vjW-oW-H7g" firstAttribute="centerX" secondItem="ARa-Rp-r0e" secondAttribute="centerX" id="zK7-4y-qxj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Queue" id="jEM-rG-aYI"/>
