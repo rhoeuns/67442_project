@@ -64,7 +64,14 @@ class QueueViewController: UIViewController {
         self.thankYouMessage.text = "Thank you for reserving at \(myReservation.name)"
         self.status.text = "Your waiting time is"
         
-        self.ActualWaitingTime.text = waitingTimeText(myReservation.personal_estimated_seating_time!)
+        let diff = DateDifference(date: myReservation.personal_estimated_seating_time!)
+        if diff.isAvailableNow() {
+            self.status.text = ""
+            self.ActualWaitingTime.text = "Your table is available now!"
+        }
+        else {
+            self.ActualWaitingTime.text = diff.waitingTimeText()
+        }
         
         self.CancelButton.hidden = false
         self.CallButton.hidden = false
@@ -76,35 +83,6 @@ class QueueViewController: UIViewController {
         self.ActualWaitingTime.text = ""
         self.CancelButton.hidden = true
         self.CallButton.hidden = true
-    }
-    
-    private func waitingTimeText(date: NSDate) -> String {
-        let difference = DateDifference().difference(date)
-        
-        if difference.hour < 1 && difference.minute < 1 {
-            self.status.text = "" // FIXME: this is sort of a hack
-            return "Your table is available now!"
-        }
-        
-        var output = ""
-
-        if difference.hour == 1 {
-            output += "\(difference.hour) hour"
-        }
-        else {
-            output += "\(difference.hour) hours"
-        }
-        
-        output += " and "
-        
-        if difference.minute == 1 {
-            output += "\(difference.minute) minute"
-        }
-        else {
-            output += "\(difference.minute) minutes"
-        }
-        
-        return output
     }
     
     private func calculateTime(){
