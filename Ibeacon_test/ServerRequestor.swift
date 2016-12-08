@@ -12,8 +12,9 @@ import SwiftyJSON
 
 class ServerRequestor {
 //    let endpoint = "http://localhost:3000/db"
-    let endpoint = "http://localhost:3000/users/1/restaurants"
-
+//    let endpoint = "http://localhost:3000/users/1/restaurants"
+    let endpoint = "https://queue-api.herokuapp.com/users/1/restaurants"
+    
     func getRestaurants(completionHandler: (JSON?, NSError?) -> ()) {
         Alamofire.request(.GET, endpoint)
             .responseJSON { response in
