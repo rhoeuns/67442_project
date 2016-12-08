@@ -28,7 +28,9 @@ class DetailsViewController: UIViewController {
     var talbeInLine:String?
     var waitingTiem:String?
     
+    var dataStore = DataStore()
     
+    @IBOutlet weak var teamNumber: UITextField!
     @IBOutlet weak var storeImage: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     
@@ -54,7 +56,7 @@ class DetailsViewController: UIViewController {
     
     
     @IBAction func reserveTapped(sender: UIButton) {
-        
+        self.dataStore.updateMakeReservation(self.restaurant!, party_size: Int(self.teamNumber.text!)!, completionHandler: {})
     }
     
 
