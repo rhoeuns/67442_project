@@ -22,10 +22,12 @@ class Restaurant {
     let time_closed: String
     var generalEstimatedSeatingTime: NSDate
     var personal_estimated_seating_time: NSDate?
+    var position_in_line: Int?
     
     init(id: Int, name: String, description: String, phone: String, picture: String,
          address: String, latitude: Float, longitude: Float, time_open: String, time_closed: String,
-         generalEstimatedSeatingTime: NSDate, personal_estimated_seating_time: NSDate?) {
+         generalEstimatedSeatingTime: NSDate, personal_estimated_seating_time: NSDate?,
+         position_in_line: Int?) {
         self.id = id
         self.name = name
         self.description = description
@@ -38,6 +40,7 @@ class Restaurant {
         self.time_closed = time_closed
         self.generalEstimatedSeatingTime = generalEstimatedSeatingTime
         self.personal_estimated_seating_time = personal_estimated_seating_time
+        self.position_in_line = position_in_line
     }
     
     convenience init(json: JSON) {
@@ -59,7 +62,7 @@ class Restaurant {
                   address: json["address"].string!, latitude: Float(json["latitude"].double!),
                   longitude: Float(json["longitude"].double!), time_open: json["time_open"].string!,
                   time_closed: json["time_closed"].string!, generalEstimatedSeatingTime: general_time,
-                  personal_estimated_seating_time: personal_time)
+                  personal_estimated_seating_time: personal_time, position_in_line: json["position_in_line"].int!)
     }
     
     /**
