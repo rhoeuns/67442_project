@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="ZuJ-vr-sWQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="5IK-qb-24k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -99,10 +99,49 @@
             </objects>
             <point key="canvasLocation" x="2688.5" y="1030.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Queue-->
+        <scene sceneID="Sjo-v4-KVq">
+            <objects>
+                <viewController id="dkw-h7-97R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pGZ-1z-zaI"/>
+                        <viewControllerLayoutGuide type="bottom" id="a5A-NQ-l8a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wRU-JP-1j0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Queue" id="jEM-rG-aYI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnO-ab-Otm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="1900"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="X38-NB-oqa">
+            <objects>
+                <tabBarController id="5IK-qb-24k" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="wvb-9c-DCK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZuJ-vr-sWQ" kind="relationship" relationship="viewControllers" id="j7s-0Y-Bb7"/>
+                        <segue destination="dkw-h7-97R" kind="relationship" relationship="viewControllers" id="pql-J5-rRQ"/>
+                        <segue destination="dOq-tE-XXh" kind="relationship" relationship="viewControllers" id="bK0-Pm-hCU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QYz-Yp-KJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="1472"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="kXt-VD-tJ3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZuJ-vr-sWQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="8MP-dX-Oct"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cZS-0g-kCO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -116,6 +155,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1NC-sk-oGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1477.5" y="1030.5"/>
+        </scene>
+        <!--BeaconTest-->
+        <scene sceneID="tgo-Oy-7kJ">
+            <objects>
+                <viewController id="dOq-tE-XXh" customClass="ViewController" customModule="Ibeacon_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EHu-wX-FqH"/>
+                        <viewControllerLayoutGuide type="bottom" id="HXK-gR-jYf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CyF-Z8-TXa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is for becon test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njj-sb-1p8">
+                                <rect key="frame" x="107" y="323" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Njj-sb-1p8" firstAttribute="centerY" secondItem="CyF-Z8-TXa" secondAttribute="centerY" id="U9T-Kn-DcZ"/>
+                            <constraint firstItem="Njj-sb-1p8" firstAttribute="centerX" secondItem="CyF-Z8-TXa" secondAttribute="centerX" id="wnk-r9-qtg"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="BeaconTest" id="1gL-wg-3DQ"/>
+                    <connections>
+                        <outlet property="beaconStatus" destination="Njj-sb-1p8" id="JwI-Ij-ThQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENA-a1-Le3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960" y="2570"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

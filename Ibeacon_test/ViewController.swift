@@ -12,12 +12,15 @@ import CoreBluetooth
 
 class ViewController: UIViewController, CBPeripheralManagerDelegate {
     
-    @IBOutlet weak var beaconStatus: UILabel!
     let dataStore = DataStore()
     
     let locationManager = CLLocationManager()
     let myBTManager = CBPeripheralManager()
     var lastStage = CLProximity.Unknown
+    
+    @IBOutlet weak var beaconStatus: UILabel!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
