@@ -56,7 +56,11 @@ class DetailsViewController: UIViewController {
     
     
     @IBAction func reserveTapped(sender: UIButton) {
-        self.dataStore.updateMakeReservation(self.restaurant!, party_size: Int(self.teamNumber.text!)!, completionHandler: {})
+        self.dataStore.updateMakeReservation(self.restaurant!, party_size: Int(self.teamNumber.text!)!, completionHandler: {
+            // Switch to the reservation page, and also pop the previous view
+            self.tabBarController?.selectedIndex = 1
+            self.navigationController?.popViewControllerAnimated(false)
+        })
     }
     
 

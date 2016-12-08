@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="5IK-qb-24k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="5IK-qb-24k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,11 +23,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9k9-b4-tuc" id="X2x-9Q-TqW">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rHK-cE-EtY">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -144,7 +144,7 @@
         <!--Queue-->
         <scene sceneID="Sjo-v4-KVq">
             <objects>
-                <viewController id="dkw-h7-97R" customClass="QueueViewController" customModule="Ibeacon_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QueueViewController" id="dkw-h7-97R" customClass="QueueViewController" customModule="Ibeacon_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pGZ-1z-zaI"/>
                         <viewControllerLayoutGuide type="bottom" id="a5A-NQ-l8a"/>
@@ -211,7 +211,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="X38-NB-oqa">
             <objects>
-                <tabBarController id="5IK-qb-24k" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="5IK-qb-24k" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="wvb-9c-DCK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
