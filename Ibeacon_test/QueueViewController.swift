@@ -80,8 +80,6 @@ class QueueViewController: UIViewController {
         }
         else{
             self.updateLabelsForNoReservation()
-            
-
         }
     }
     
@@ -98,6 +96,7 @@ class QueueViewController: UIViewController {
         let calender = NSCalendar.currentCalendar()
         let components = calender.components([.Hour, .Minute], fromDate: date)
     }
+    
     /*
     // MARK: - Navigation
 
