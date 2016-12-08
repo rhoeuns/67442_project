@@ -32,6 +32,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var storeImage: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     
+    @IBOutlet weak var reserveButton: UIButton!
+    
     override func viewWillAppear(animated: Bool) {
         // navigationItem.title = "One"
         navigationItem.title = "\(self.name!)"
@@ -48,6 +50,11 @@ class DetailsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func reserveTapped(sender: UIButton) {
+        
     }
     
 
