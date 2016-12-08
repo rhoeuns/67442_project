@@ -1,5 +1,5 @@
 # Queue
-iOS app for our 67-442 final project
+iOS app for our 67-442 final project. Restaurant virtual waiting line, powered by proximity beacons (Estimote).
 
 The backend server for this app is located [here](https://github.com/Ligerx/queue-api)
 
