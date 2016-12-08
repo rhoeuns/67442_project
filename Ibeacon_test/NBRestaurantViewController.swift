@@ -10,15 +10,16 @@ import UIKit
 
 class NBRestaurantViewController: UITableViewController {
 
-    @IBOutlet var restaurantTableView: UITableView!
     var dataStore = DataStore()
     
-    @IBOutlet weak var refreshButton: UIBarButtonItem!
+//    @IBOutlet weak var refreshButton: UIBarButtonItem!
+
+    @IBOutlet var restaurantTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let restaurants = dataStore.restaurants
-        dataStore.updateRestaurants() {
+        self.dataStore.updateRestaurants() {
             self.restaurantTableView.reloadData()
         }
 
@@ -52,33 +53,24 @@ class NBRestaurantViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dataStore.restaurants.count
+        return self.dataStore.restaurants.count
     }
+
+ //   @IBAction func refreshTapped(sender: AnyObject) {
+ //       dataStore.updateRestaurants() {
+ //           self.restaurantTableView.reloadData()
+ //       }
+ //   }
+
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
-        -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath)
-            
-            let restaurant = dataStore.restaurants[indexPath.row] as Restaurant
-            cell.textLabel?.text = restaurant.name
-            return cell
-    }
-
-    @IBAction func refreshTapped(sender: AnyObject) {
-        dataStore.updateRestaurants() {
-            self.restaurantTableView.reloadData()
-        }
-    }
-
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel?.text = "\(self.dataStore.restaurants[indexPath.row].name)"
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

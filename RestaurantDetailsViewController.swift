@@ -1,9 +1,9 @@
 //
 //  RestaurantDetailsViewController.swift
-//  Ibeacon_test
+//  
 //
 //  Created by RhoEun Song on 12/7/16.
-//  Copyright © 2016 RhoEun Song. All rights reserved.
+//
 //
 
 import UIKit
