@@ -10,7 +10,13 @@ import Foundation
 import UIKit
 import CoreLocation
 
-extension ViewController: CLLocationManagerDelegate {
+class Beacon: NSObject, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
+    var viewController:UIViewController?
+    var lastStage = CLProximity.Unknown
+    var beaconStatus: UILabel?
+
     
     func setupBeacon() {
         
@@ -75,7 +81,7 @@ extension ViewController: CLLocationManagerDelegate {
         
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        viewController!.presentViewController(alertController, animated: true, completion: nil)
     }
     
     
@@ -153,19 +159,19 @@ extension ViewController: CLLocationManagerDelegate {
                         
                     case .Immediate:
                         proximityMessage = "Very close"
-                        self.view.backgroundColor = UIColor.greenColor()
+                        viewController!.view.backgroundColor = UIColor.greenColor()
                         
                     case .Near:
                         proximityMessage = "Near"
-                        self.view.backgroundColor = UIColor.grayColor()
+                        viewController!.view.backgroundColor = UIColor.grayColor()
                         
                     case .Far:
                         proximityMessage = "Far"
-                        self.view.backgroundColor = UIColor.blackColor()
+                        viewController!.view.backgroundColor = UIColor.blackColor()
                         
                     default:
                         proximityMessage = "Where's the beacon?"
-                        self.view.backgroundColor = UIColor.redColor()
+                        viewController!.view.backgroundColor = UIColor.redColor()
                         
                     }
                     var makeString = "Beacon Details:n"
@@ -175,11 +181,11 @@ extension ViewController: CLLocationManagerDelegate {
                     makeString += "Minor Value = \(closestBeacon.minor.intValue)n"
                     makeString += "Distance From iBeacon = \(proximityMessage)"
                     
-                    self.beaconStatus.text = makeString
+                    self.beaconStatus!.text = makeString
                     if proximityMessage == "Very close"{
                         let alert = UIAlertController(title: "Error", message: "Do you want to hop in the line for Union Grill?" , preferredStyle: .Alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-                        presentViewController(alert, animated: true, completion: nil)
+                        viewController!.presentViewController(alert, animated: true, completion: nil)
                     }
                 }
             }
