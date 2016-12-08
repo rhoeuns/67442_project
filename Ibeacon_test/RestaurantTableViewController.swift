@@ -50,6 +50,9 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidDisappear(animated: Bool) {
         timer?.invalidate()
         timer = nil
+        
+        // No function to kill the beaconManager right now
+        // Might need to have on in the future, not sure?
     }
     
     // MARK: - Table view data source

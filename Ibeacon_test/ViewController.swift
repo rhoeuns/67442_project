@@ -32,15 +32,15 @@ class ViewController: UIViewController{
 //        MockData()
 //        ServerRequestor().testGET()
         
-        dataStore.updateRestaurants() {
-            print("Callback function inside ViewController worked! yay!")
-//            self.test()
-            
-            let restaurant1 = self.dataStore.restaurants[0]
-            self.dataStore.updateRestaurant(restaurant1) {
-                print("How do I test this? I'd need the server to change")
-            }
-        }
+//        dataStore.updateRestaurants() {
+//            print("Callback function inside ViewController worked! yay!")
+////            self.test()
+//            
+//            let restaurant1 = self.dataStore.restaurants[0]
+//            self.dataStore.updateRestaurant(restaurant1) {
+//                print("How do I test this? I'd need the server to change")
+//            }
+//        }
 
         
 //        let requestor = ServerRequestor()
@@ -56,9 +56,9 @@ class ViewController: UIViewController{
 //        }
         
         // Define in iBeacon.swift
-        self.beacon.viewController = self
-        self.beacon.beaconStatus = beaconStatus
-        self.beacon.setupBeacon()
+//        self.beacon.viewController = self
+//        self.beacon.beaconStatus = beaconStatus
+//        self.beacon.setupBeacon()
     }
 
     override func didReceiveMemoryWarning() {
