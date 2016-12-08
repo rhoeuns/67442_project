@@ -22,7 +22,7 @@ class Restaurant {
     let time_closed: String
     var generalEstimatedSeatingTime: NSDate
     var personal_estimated_seating_time: NSDate?
-    var position_in_line: Int? // 0 indexed
+    var position_in_line: Int?
     
     init(id: Int, name: String, description: String, phone: String, picture: String,
          address: String, latitude: Float, longitude: Float, time_open: String, time_closed: String,
