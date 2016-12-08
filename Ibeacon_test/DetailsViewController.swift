@@ -8,9 +8,23 @@
 
 import UIKit
 
+extension UIImageView{
+    
+    func setImageFromURl(stringImageUrl url: String){
+        
+        if let url = NSURL(string: url) {
+            if let data = NSData(contentsOfURL: url) {
+                self.image = UIImage(data: data)
+            }
+        }
+    }
+}
+
 class DetailsViewController: UIViewController {
     var name:String?
     var imgName:String?
+    
+    var restaurant:Restaurant?
     var talbeInLine:String?
     var waitingTiem:String?
     
@@ -18,12 +32,17 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var storeImage: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     
+    override func viewWillAppear(animated: Bool) {
+        // navigationItem.title = "One"
+        navigationItem.title = "\(self.name!)"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Name \(self.name). and img url is \(self.imgName)")
         storeName.text = name
-        storeImage.image = UIImage(named: imgName!)
-        // Do any additional setup after loading the view.
+        let imgURL = imgName
+        storeImage.setImageFromURl(stringImageUrl: imgURL!)
     }
 
     override func didReceiveMemoryWarning() {

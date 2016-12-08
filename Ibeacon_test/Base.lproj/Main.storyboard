@@ -45,7 +45,9 @@
                             <outlet property="delegate" destination="gdz-Xd-tv2" id="VPr-OM-ljv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Near By Restaurants" id="4pN-iM-Bqf"/>
+                    <navigationItem key="navigationItem" title="Near By Restaurants" id="4pN-iM-Bqf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="mKw-2G-IRA"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="restaurantTableView" destination="Ujc-rW-mbn" id="8Mz-2m-sgF"/>
                     </connections>
@@ -89,7 +91,9 @@
                             <constraint firstItem="nQ2-eb-Mjc" firstAttribute="top" secondItem="51Y-Mo-oJc" secondAttribute="bottom" constant="8" id="vSt-KW-qX2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Restaurant Details" id="eXw-gr-z7d"/>
+                    <navigationItem key="navigationItem" title="Restaurant Details" id="eXw-gr-z7d">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Jgr-sj-sND"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="storeImage" destination="51Y-Mo-oJc" id="FEx-0v-jUS"/>
                         <outlet property="storeName" destination="nQ2-eb-Mjc" id="fNU-gS-npJ"/>
@@ -130,7 +134,6 @@
                     <connections>
                         <segue destination="ZuJ-vr-sWQ" kind="relationship" relationship="viewControllers" id="j7s-0Y-Bb7"/>
                         <segue destination="dkw-h7-97R" kind="relationship" relationship="viewControllers" id="pql-J5-rRQ"/>
-                        <segue destination="dOq-tE-XXh" kind="relationship" relationship="viewControllers" id="bK0-Pm-hCU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYz-Yp-KJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,45 +158,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1NC-sk-oGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1477.5" y="1030.5"/>
-        </scene>
-        <!--BeaconTest-->
-        <scene sceneID="tgo-Oy-7kJ">
-            <objects>
-                <viewController id="dOq-tE-XXh" customClass="ViewController" customModule="Ibeacon_test" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EHu-wX-FqH"/>
-                        <viewControllerLayoutGuide type="bottom" id="HXK-gR-jYf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CyF-Z8-TXa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is for becon test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njj-sb-1p8">
-                                <rect key="frame" x="87" y="175" width="200" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Wkc-Ln-TEY"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="sfJ-W4-TqZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Njj-sb-1p8" firstAttribute="leading" secondItem="CyF-Z8-TXa" secondAttribute="leadingMargin" constant="71" id="1dM-HY-3ur"/>
-                            <constraint firstItem="Njj-sb-1p8" firstAttribute="top" secondItem="EHu-wX-FqH" secondAttribute="bottom" constant="155" id="EVB-ct-5b6"/>
-                            <constraint firstItem="Njj-sb-1p8" firstAttribute="centerX" secondItem="CyF-Z8-TXa" secondAttribute="centerX" id="wnk-r9-qtg"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="BeaconTest" id="1gL-wg-3DQ"/>
-                    <connections>
-                        <outlet property="beaconStatus" destination="Njj-sb-1p8" id="JwI-Ij-ThQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ENA-a1-Le3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="959.5" y="2569.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

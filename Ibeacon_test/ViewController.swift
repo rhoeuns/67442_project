@@ -57,7 +57,6 @@ class ViewController: UIViewController{
         
         // Define in iBeacon.swift
         self.beacon.viewController = self
-        self.beacon.beaconStatus = beaconStatus
         self.beacon.setupBeacon()
     }
 
