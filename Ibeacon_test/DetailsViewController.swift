@@ -28,6 +28,8 @@ class DetailsViewController: UIViewController {
     var talbeInLine:String?
     var waitingTiem:String?
     
+    var timer: NSTimer?
+
     var dataStore = DataStore()
     
     @IBOutlet weak var teamNumber: UITextField!
@@ -35,11 +37,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var storeName: UILabel!
     
     @IBOutlet weak var reserveButton: UIButton!
-    
-    override func viewWillAppear(animated: Bool) {
-        // navigationItem.title = "One"
-        navigationItem.title = "\(self.name!)"
-    }
+    @IBOutlet weak var waitTimeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +52,24 @@ class DetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        navigationItem.title = "\(self.name!)"
+//        self.updateLabels()
+        
+        self.timer = Timer().loop(interval: 1.5) {
+//            self.reloadDataAndLabels()
+            self.dataStore.updateRestaurant(self.restaurant!) { updatedRestaurant in
+                self.restaurant = updatedRestaurant
+                self.updateLabels()
+            }
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        timer?.invalidate()
+        timer = nil
+    }
+    
     
     @IBAction func reserveTapped(sender: UIButton) {
         self.dataStore.updateMakeReservation(self.restaurant!, party_size: Int(self.teamNumber.text!)!, completionHandler: {
@@ -61,6 +77,17 @@ class DetailsViewController: UIViewController {
             self.tabBarController?.selectedIndex = 1
             self.navigationController?.popViewControllerAnimated(false)
         })
+    }
+    
+    func updateLabels() {
+        let diff = DateDifference(date: restaurant!.generalEstimatedSeatingTime)
+        
+        if diff.isAvailableNow() {
+            waitTimeLabel.text = "There's no wait time!"
+        }
+        else {
+            waitTimeLabel.text = diff.waitingTimeText()
+        }
     }
     
 

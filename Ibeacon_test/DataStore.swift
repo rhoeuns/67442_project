@@ -38,7 +38,7 @@ class DataStore {
         }
     }
     
-    func updateRestaurant(restaurant: Restaurant, completionHandler: (() -> Void)?) {
+    func updateRestaurant(restaurant: Restaurant, completionHandler: ((Restaurant) -> Void)?) {
         serverRequestor.getRestaurant(restaurant.id) { json, error in
             let updatedRestaurant = self.jsonParser.parseRestaurant(json!)
             let resultRestaurant = restaurant // this will hold the final result that is returned
@@ -72,7 +72,7 @@ class DataStore {
             // TODO: probably need to have a specific way format for the completion handler
             //       so that you know IF an update happened, and if so what kind
             if completionHandler != nil {
-                completionHandler!()
+                completionHandler!(resultRestaurant)
             }
         }
     }

@@ -135,6 +135,7 @@
                         <outlet property="storeImage" destination="51Y-Mo-oJc" id="FEx-0v-jUS"/>
                         <outlet property="storeName" destination="nQ2-eb-Mjc" id="fNU-gS-npJ"/>
                         <outlet property="teamNumber" destination="dio-bs-Kge" id="nrt-Wx-XIv"/>
+                        <outlet property="waitTimeLabel" destination="UU0-3B-FG9" id="4gY-G1-cT6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7o-Ag-8Du" userLabel="First Responder" sceneMemberID="firstResponder"/>
