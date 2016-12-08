@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="5IK-qb-24k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="5IK-qb-24k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -74,21 +74,36 @@
                                     <constraint firstAttribute="height" constant="188" id="HAW-Vl-4vB"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ2-eb-Mjc">
-                                <rect key="frame" x="42" y="260" width="291" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ2-eb-Mjc">
+                                <rect key="frame" x="166.5" y="272" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X hr XX min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UU0-3B-FG9">
+                                <rect key="frame" x="112" y="333" width="151.5" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3v-Sc-r9Y">
+                                <rect key="frame" x="121" y="508" width="132" height="86"/>
+                                <state key="normal" title="Cancel Reservation"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nQ2-eb-Mjc" firstAttribute="top" secondItem="51Y-Mo-oJc" secondAttribute="bottom" constant="20" id="0MX-ZC-vbe"/>
+                            <constraint firstItem="UU0-3B-FG9" firstAttribute="centerX" secondItem="g6U-zz-5tG" secondAttribute="centerX" id="BhV-aI-xoT"/>
+                            <constraint firstItem="x3v-Sc-r9Y" firstAttribute="top" secondItem="UU0-3B-FG9" secondAttribute="bottom" constant="140" id="Drr-0T-PNy"/>
+                            <constraint firstItem="nQ2-eb-Mjc" firstAttribute="centerX" secondItem="g6U-zz-5tG" secondAttribute="centerX" id="FrJ-w9-Lbt"/>
+                            <constraint firstItem="UU0-3B-FG9" firstAttribute="top" secondItem="nQ2-eb-Mjc" secondAttribute="bottom" constant="40" id="INF-Lz-r7w"/>
                             <constraint firstItem="51Y-Mo-oJc" firstAttribute="top" secondItem="4lJ-Yk-9li" secondAttribute="bottom" id="OrI-2L-hdI"/>
+                            <constraint firstItem="x3v-Sc-r9Y" firstAttribute="centerX" secondItem="g6U-zz-5tG" secondAttribute="centerX" id="TXg-IL-IM3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="51Y-Mo-oJc" secondAttribute="trailing" constant="-16" id="UCc-1D-9Wq"/>
+                            <constraint firstItem="vDT-uZ-4cz" firstAttribute="top" secondItem="x3v-Sc-r9Y" secondAttribute="bottom" constant="24" id="XYt-F6-o2V"/>
                             <constraint firstItem="51Y-Mo-oJc" firstAttribute="centerX" secondItem="g6U-zz-5tG" secondAttribute="centerX" id="hI7-sw-J5H"/>
                             <constraint firstItem="51Y-Mo-oJc" firstAttribute="leading" secondItem="g6U-zz-5tG" secondAttribute="leadingMargin" constant="-16" id="qhQ-8Q-ATb"/>
-                            <constraint firstItem="nQ2-eb-Mjc" firstAttribute="top" secondItem="51Y-Mo-oJc" secondAttribute="bottom" constant="8" id="vSt-KW-qX2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Restaurant Details" id="eXw-gr-z7d">
