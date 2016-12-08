@@ -15,13 +15,12 @@ class QueueViewController: UIViewController {
     @IBOutlet weak var CallButton: UIButton!
     @IBOutlet weak var ActualWaitingTime: UILabel!
     
+    var timer: NSTimer?
+    
     var dataStore = DataStore()
-
-    private var myReservation: [Restaurant]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        findReservedRestaurant()
         // Do any additional setup after loading the view.
     }
 
@@ -30,27 +29,38 @@ class QueueViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func CancelTapped(sender: UIButton) {
-        if let myReservation = self.myReservation{
-            dataStore.updateCancelReservation(myReservation[0], completionHandler: nil)
+    override func viewDidAppear(animated: Bool) {
+        self.timer = Timer().loop(interval: 3.0) {
+            self.reloadDataAndLabels()
         }
-        findReservedRestaurant()
-        //Todo: make a update labels function
-        
     }
     
-    private func findReservedRestaurant(){
-        dataStore.updateRestaurants(){
-            let restaurants = self.dataStore.restaurants
-            self.myReservation = restaurants.filter{$0.personal_estimated_seating_time != nil}
-            if let myReservation = self.myReservation {
-                if (myReservation.count > 0) {
-                    self.thankYouMessage.text = "Thank you for reserving at \(myReservation[0].name)"
-                    self.ActualWaitingTime.text = "\(myReservation[0].personal_estimated_seating_time)"
-                }
+    override func viewDidDisappear(animated: Bool) {
+        timer?.invalidate()
+        timer = nil
+    }
+
+    
+
+    @IBAction func CancelTapped(sender: UIButton) {
+        if let reservation = dataStore.findReservedRestaurant() {
+            dataStore.updateCancelReservation(reservation) {
+                self.updateLabels(reservation)
             }
         }
+    }
+    
+    private func reloadDataAndLabels(){
+        dataStore.updateRestaurants(){
+            if let reservation = self.dataStore.findReservedRestaurant() {
+                self.updateLabels(reservation)
+            }
+        }
+    }
+    
+    private func updateLabels(myReservation: Restaurant) {
+        thankYouMessage.text = "Thank you for reserving at \(myReservation.name)"
+        ActualWaitingTime.text = "\(myReservation.personal_estimated_seating_time)"
     }
     
     private func calculateTime(){
