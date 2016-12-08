@@ -16,10 +16,8 @@
 		842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF1181DDFB35900A35D81 /* Restaurant.swift */; };
 		842AF11D1DDFC47F00A35D81 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11C1DDFC47F00A35D81 /* MockData.swift */; };
 		A84D1FAD51FD754AA8744E32 /* Pods_Ibeacon_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3C256EC68D0ED490695174 /* Pods_Ibeacon_testUITests.framework */; };
-		A90872A51DF8FC8200716832 /* RestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90872A41DF8FC8200716832 /* RestaurantDetailsViewController.swift */; };
 		A91DD8241DDFB600005B4E8B /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */; };
 		A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8261DDFCC7C005B4E8B /* beacon.swift */; };
-		A91DD8561DF234D2005B4E8B /* NBRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */; };
 		A95EB42B1DF68C5800ED37D3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EB42A1DF68C5800ED37D3 /* Timer.swift */; };
 		A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */; };
 		A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A2E1DD0AE4A0028108E /* ViewController.swift */; };
@@ -28,6 +26,9 @@
 		A9988A371DD0AE4A0028108E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9988A351DD0AE4A0028108E /* LaunchScreen.storyboard */; };
 		A9988A421DD0AE4B0028108E /* Ibeacon_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A411DD0AE4B0028108E /* Ibeacon_testTests.swift */; };
 		A9988A4D1DD0AE4B0028108E /* Ibeacon_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9988A4C1DD0AE4B0028108E /* Ibeacon_testUITests.swift */; };
+		A9AB5B691DF94AEA0015B198 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB5B681DF94AEA0015B198 /* RestaurantTableViewController.swift */; };
+		A9AB5B6B1DF94FCA0015B198 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB5B6A1DF94FCA0015B198 /* DetailsViewController.swift */; };
+		A9AB5B6E1DF959370015B198 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AB5B6D1DF959370015B198 /* cat.png */; };
 		DCEA0933215A3FE17CD514AB /* Pods_Ibeacon_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7364040FC73D9A182BA9B7 /* Pods_Ibeacon_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,11 +62,9 @@
 		841ECEFC1DF68B64000AE3B6 /* QueueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueViewController.swift; sourceTree = "<group>"; };
 		842AF1181DDFB35900A35D81 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		842AF11C1DDFC47F00A35D81 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
-		A90872A41DF8FC8200716832 /* RestaurantDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewController.swift; sourceTree = "<group>"; };
 		A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		A91DD8251DDFB6C6005B4E8B /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjCBridge.h; path = Ibeacon_test/ObjCBridge.h; sourceTree = "<group>"; };
 		A91DD8261DDFCC7C005B4E8B /* beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beacon.swift; sourceTree = "<group>"; };
-		A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBRestaurantViewController.swift; sourceTree = "<group>"; };
 		A95EB42A1DF68C5800ED37D3 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		A9988A291DD0AE4A0028108E /* Ibeacon_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ibeacon_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +79,9 @@
 		A9988A481DD0AE4B0028108E /* Ibeacon_testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ibeacon_testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9988A4C1DD0AE4B0028108E /* Ibeacon_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ibeacon_testUITests.swift; sourceTree = "<group>"; };
 		A9988A4E1DD0AE4B0028108E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9AB5B681DF94AEA0015B198 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		A9AB5B6A1DF94FCA0015B198 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		A9AB5B6D1DF959370015B198 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
 		BE91D227B134D25C1D6BFE3A /* Pods-Ibeacon_testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_testUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_testUITests/Pods-Ibeacon_testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC1F2E606370FD302B640469 /* Pods-Ibeacon_testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_testTests/Pods-Ibeacon_testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED2D1FFFFE2D24714712CA10 /* Pods_Ibeacon_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ibeacon_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,8 +166,8 @@
 			children = (
 				A9988A2E1DD0AE4A0028108E /* ViewController.swift */,
 				841ECEFC1DF68B64000AE3B6 /* QueueViewController.swift */,
-				A91DD8551DF234D2005B4E8B /* NBRestaurantViewController.swift */,
-				A90872A41DF8FC8200716832 /* RestaurantDetailsViewController.swift */,
+				A9AB5B681DF94AEA0015B198 /* RestaurantTableViewController.swift */,
+				A9AB5B6A1DF94FCA0015B198 /* DetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +206,7 @@
 		A9988A2B1DD0AE4A0028108E /* Ibeacon_test */ = {
 			isa = PBXGroup;
 			children = (
+				A9AB5B6C1DF959170015B198 /* Image */,
 				A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */,
 				841ECEF51DE22EF8000AE3B6 /* Parsers */,
 				841ECEF31DE22E24000AE3B6 /* Data */,
@@ -237,6 +240,14 @@
 				A9988A4E1DD0AE4B0028108E /* Info.plist */,
 			);
 			path = Ibeacon_testUITests;
+			sourceTree = "<group>";
+		};
+		A9AB5B6C1DF959170015B198 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A9AB5B6D1DF959370015B198 /* cat.png */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 		D9420568165BFC7FFF7AD644 /* Pods */ = {
@@ -369,6 +380,7 @@
 			files = (
 				A9988A371DD0AE4A0028108E /* LaunchScreen.storyboard in Resources */,
 				A9988A341DD0AE4A0028108E /* Assets.xcassets in Resources */,
+				A9AB5B6E1DF959370015B198 /* cat.png in Resources */,
 				A9988A321DD0AE4A0028108E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,16 +546,16 @@
 			files = (
 				A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */,
 				841ECEF71DE22F14000AE3B6 /* DataStore.swift in Sources */,
+				A9AB5B691DF94AEA0015B198 /* RestaurantTableViewController.swift in Sources */,
 				A9988A2F1DD0AE4A0028108E /* ViewController.swift in Sources */,
-				A91DD8561DF234D2005B4E8B /* NBRestaurantViewController.swift in Sources */,
 				841ECEF91DE22F27000AE3B6 /* JSONParser.swift in Sources */,
-				A90872A51DF8FC8200716832 /* RestaurantDetailsViewController.swift in Sources */,
 				A9988A2D1DD0AE4A0028108E /* AppDelegate.swift in Sources */,
 				842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */,
 				842AF11D1DDFC47F00A35D81 /* MockData.swift in Sources */,
 				841ECEFB1DF40DE2000AE3B6 /* DateParser.swift in Sources */,
 				841ECEFD1DF68B64000AE3B6 /* QueueViewController.swift in Sources */,
 				A95EB42B1DF68C5800ED37D3 /* Timer.swift in Sources */,
+				A9AB5B6B1DF94FCA0015B198 /* DetailsViewController.swift in Sources */,
 				841ECEF21DE18CFE000AE3B6 /* ServerRequestor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
