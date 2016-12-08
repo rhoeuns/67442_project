@@ -87,8 +87,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3v-Sc-r9Y">
-                                <rect key="frame" x="121" y="508" width="132" height="86"/>
-                                <state key="normal" title="Cancel Reservation"/>
+                                <rect key="frame" x="100" y="508" width="175" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Hop In Line!"/>
+                                <connections>
+                                    <action selector="reserveTapped:" destination="nix-Hk-6pc" eventType="touchUpInside" id="gjU-l6-dei"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,6 +114,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Jgr-sj-sND"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="reserveButton" destination="x3v-Sc-r9Y" id="gZY-ll-IAQ"/>
                         <outlet property="storeImage" destination="51Y-Mo-oJc" id="FEx-0v-jUS"/>
                         <outlet property="storeName" destination="nQ2-eb-Mjc" id="fNU-gS-npJ"/>
                     </connections>
@@ -130,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thank you message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neR-OC-bfY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thank you message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neR-OC-bfY">
                                 <rect key="frame" x="38" y="71" width="300" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -168,7 +173,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="neR-OC-bfY" firstAttribute="top" secondItem="pGZ-1z-zaI" secondAttribute="bottom" constant="51" id="00L-C5-8LG"/>
                             <constraint firstItem="ARa-Rp-r0e" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="1fC-Bg-JFU"/>
+                            <constraint firstItem="ARa-Rp-r0e" firstAttribute="top" secondItem="neR-OC-bfY" secondAttribute="bottom" constant="81" id="PhV-14-F86"/>
                             <constraint firstItem="ARa-Rp-r0e" firstAttribute="top" secondItem="pGZ-1z-zaI" secondAttribute="bottom" constant="153" id="mmJ-p2-y0h"/>
                             <constraint firstItem="neR-OC-bfY" firstAttribute="centerX" secondItem="wRU-JP-1j0" secondAttribute="centerX" id="u5S-yi-lwS"/>
                             <constraint firstItem="vjW-oW-H7g" firstAttribute="centerX" secondItem="ARa-Rp-r0e" secondAttribute="centerX" id="zK7-4y-qxj"/>

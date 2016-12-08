@@ -82,10 +82,9 @@ class QueueViewController: UIViewController {
         let difference = DateDifference().difference(date)
         
         if difference.hour < 1 && difference.minute < 1 {
-            self.status.text = "" // FIXME: this is sort of a hack
-            return "Your table is available now!"
+            self.status.text = "Your table is available now!"
+            self.ActualWaitingTime.hidden = true
         }
-        
         var output = ""
 
         if difference.hour == 1 {
