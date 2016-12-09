@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,32 +18,38 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Logo Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hj-Sp-em1">
-                                <rect key="frame" x="238" y="522" width="124" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Queue screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhG-A4-0ar">
-                                <rect key="frame" x="247" y="162" width="107" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-mj-ZHp">
+                                <rect key="frame" x="91" y="108" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="OsW-Kc-rRO"/>
+                                    <constraint firstAttribute="height" constant="140" id="nUU-Lc-plR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Queue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-fC-IGf">
+                                <rect key="frame" x="104" y="284" width="112" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <color key="textColor" red="0.74509803921568629" green="0.18823529411764706" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.14117647058823529" green="0.32549019607843138" blue="0.57010760050664566" alpha="0.77551185344827589" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jhG-A4-0ar" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Z6H-t9-4bk"/>
-                            <constraint firstItem="0Hj-Sp-em1" firstAttribute="centerX" secondItem="jhG-A4-0ar" secondAttribute="centerX" id="amw-tb-yLU"/>
+                            <constraint firstItem="cNO-fC-IGf" firstAttribute="top" secondItem="QHT-mj-ZHp" secondAttribute="bottom" constant="36" id="9jI-4r-uMz"/>
+                            <constraint firstItem="QHT-mj-ZHp" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="88" id="Zhm-3f-NCM"/>
+                            <constraint firstItem="cNO-fC-IGf" firstAttribute="centerX" secondItem="QHT-mj-ZHp" secondAttribute="centerX" id="rbp-Hp-Nkq"/>
+                            <constraint firstItem="QHT-mj-ZHp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ydG-xH-XFS"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-81" y="197"/>
+            <point key="canvasLocation" x="-82.5" y="196.25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle" width="64" height="64"/>
+    </resources>
 </document>

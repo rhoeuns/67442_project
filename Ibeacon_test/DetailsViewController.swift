@@ -41,8 +41,6 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Name \(self.name). and img url is \(self.imgName)")
-        storeName.text = name
         let imgURL = imgName
         storeImage.setImageFromURl(stringImageUrl: imgURL!)
     }
@@ -54,6 +52,8 @@ class DetailsViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         navigationItem.title = "\(self.name!)"
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
 //        self.updateLabels()
         
         self.timer = Timer().loop(interval: 1.5) {
@@ -72,11 +72,43 @@ class DetailsViewController: UIViewController {
     
     
     @IBAction func reserveTapped(sender: UIButton) {
-        self.dataStore.updateMakeReservation(self.restaurant!, party_size: Int(self.teamNumber.text!)!, completionHandler: {
-            // Switch to the reservation page, and also pop the previous view
-            self.tabBarController?.selectedIndex = 1
-            self.navigationController?.popViewControllerAnimated(false)
-        })
+        let input = self.teamNumber.text!
+        self.dataStore.updateRestaurants(){
+            if let reservation = self.dataStore.findReservedRestaurant(){
+                let alertController = UIAlertController(title: "Sorry", message:
+                    "You can only make one reservation at a time", preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction) in
+                    print("You've pressed OK button");
+                }
+                alertController.addAction(OKAction)
+                self.presentViewController(alertController, animated: true, completion:nil)
+            }
+            else{
+                let alertController = UIAlertController(title: "Error", message:
+                    "Please type in number of people for your team. Thank you", preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction) in
+                    print("You've pressed OK button");
+                }
+                alertController.addAction(OKAction)
+                if input == ""  {
+                    print("no team number inputed \(input)")
+                    self.presentViewController(alertController, animated: true, completion:nil)
+                }
+                else{
+                    self.dataStore.updateMakeReservation(self.restaurant!, party_size: Int(self.teamNumber.text!)!, completionHandler: {
+                        // Switch to the reservation page, and also pop the previous view
+                        self.tabBarController?.selectedIndex = 1
+                        self.navigationController?.popViewControllerAnimated(false)
+                        self.teamNumber.text = " "
+
+                    })
+                }
+            }
+        }
+
+        
+        
+        
     }
     
     func updateLabels() {
