@@ -64,15 +64,4 @@ class Restaurant {
                   time_closed: json["time_closed"].string!, generalEstimatedSeatingTime: general_time,
                   personal_estimated_seating_time: personal_time, position_in_line: json["position_in_line"].int)
     }
-    
-    /**
-     Get the estimated wait time that everyone sees.
-     (Note: NSTimeInterval is an alias for Double)
-     
-     - returns: Seconds between now and the estimated seating time.
-     */
-    func waitTime() -> NSTimeInterval {
-        return generalEstimatedSeatingTime.timeIntervalSinceNow
-    }
-
 }

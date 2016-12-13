@@ -53,11 +53,8 @@ class DetailsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         navigationItem.title = "\(self.name!)"
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-
-//        self.updateLabels()
         
         self.timer = Timer().loop(interval: 1.5) {
-//            self.reloadDataAndLabels()
             self.dataStore.updateRestaurant(self.restaurant!) { updatedRestaurant in
                 self.restaurant = updatedRestaurant
                 self.updateLabels()
@@ -105,10 +102,6 @@ class DetailsViewController: UIViewController {
                 }
             }
         }
-
-        
-        
-        
     }
     
     func updateLabels() {
@@ -121,16 +114,4 @@ class DetailsViewController: UIViewController {
             waitTimeLabel.text = diff.waitingTimeText()
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
