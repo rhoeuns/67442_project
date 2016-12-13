@@ -16,8 +16,16 @@
 		842AF1191DDFB35900A35D81 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF1181DDFB35900A35D81 /* Restaurant.swift */; };
 		842AF11D1DDFC47F00A35D81 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11C1DDFC47F00A35D81 /* MockData.swift */; };
 		84485F571DF9BAFC00BD6896 /* DateDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84485F561DF9BAFC00BD6896 /* DateDifference.swift */; };
+		8462D4C71E00896B007A1896 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF1181DDFB35900A35D81 /* Restaurant.swift */; };
+		8462D4C81E008973007A1896 /* DateDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84485F561DF9BAFC00BD6896 /* DateDifference.swift */; };
+		8462D4C91E008AB3007A1896 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF11C1DDFC47F00A35D81 /* MockData.swift */; };
+		8462D4CA1E008AB5007A1896 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF61DE22F14000AE3B6 /* DataStore.swift */; };
+		8462D4CB1E008AB8007A1896 /* ServerRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF11DE18CFE000AE3B6 /* ServerRequestor.swift */; };
+		8462D4CC1E008ABD007A1896 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EB42A1DF68C5800ED37D3 /* Timer.swift */; };
 		84ED28391E00783F00063F17 /* JSONParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED28381E00783F00063F17 /* JSONParserTest.swift */; };
 		84ED283B1E00788500063F17 /* RestaurantTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED283A1E00788500063F17 /* RestaurantTest.swift */; };
+		84ED283C1E00866B00063F17 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEF81DE22F27000AE3B6 /* JSONParser.swift */; };
+		84ED283D1E00866E00063F17 /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ECEFA1DF40DE2000AE3B6 /* DateParser.swift */; };
 		A84D1FAD51FD754AA8744E32 /* Pods_Ibeacon_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3C256EC68D0ED490695174 /* Pods_Ibeacon_testUITests.framework */; };
 		A91DD8241DDFB600005B4E8B /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91DD8231DDFB600005B4E8B /* EstimoteSDK.framework */; };
 		A91DD8271DDFCC7C005B4E8B /* beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DD8261DDFCC7C005B4E8B /* beacon.swift */; };
@@ -576,7 +584,15 @@
 			files = (
 				84ED28391E00783F00063F17 /* JSONParserTest.swift in Sources */,
 				A9988A421DD0AE4B0028108E /* Ibeacon_testTests.swift in Sources */,
+				8462D4C71E00896B007A1896 /* Restaurant.swift in Sources */,
+				84ED283C1E00866B00063F17 /* JSONParser.swift in Sources */,
+				8462D4C81E008973007A1896 /* DateDifference.swift in Sources */,
+				8462D4C91E008AB3007A1896 /* MockData.swift in Sources */,
+				84ED283D1E00866E00063F17 /* DateParser.swift in Sources */,
+				8462D4CA1E008AB5007A1896 /* DataStore.swift in Sources */,
 				84ED283B1E00788500063F17 /* RestaurantTest.swift in Sources */,
+				8462D4CC1E008ABD007A1896 /* Timer.swift in Sources */,
+				8462D4CB1E008AB8007A1896 /* ServerRequestor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +662,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -694,6 +711,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
