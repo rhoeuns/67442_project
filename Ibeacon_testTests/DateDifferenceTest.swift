@@ -26,12 +26,17 @@ class DateDifferenceTest: XCTestCase {
     
     func test_Difference() {
         //Setup 2 dateDifference
-        let date1 = NSDate(timeIntervalSinceNow: 60*2)
+        let date1 = NSDate(timeIntervalSinceNow: 60*3)
         let dateDiff = DateDifference(date: date1)
-        let date2 = NSDate(timeIntervalSinceNow: 60*61)
+        let date2 = NSDate(timeIntervalSinceNow: 60*62)
         let dateDiff2 = DateDifference(date: date2)
         XCTAssertEqual(date1, dateDiff.date)
         XCTAssertEqual(date2, dateDiff2.date)
+        XCTAssertEqual(2, Int(dateDiff.diff!.minute))
+        XCTAssertEqual(1, Int(dateDiff2.diff!.minute))
+        XCTAssertEqual(0, Int(dateDiff.diff!.hour))
+        XCTAssertEqual(1, Int(dateDiff2.diff!.hour))
+        
     }
     
     

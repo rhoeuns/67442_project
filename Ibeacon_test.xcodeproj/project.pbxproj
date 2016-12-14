@@ -41,6 +41,7 @@
 		A9AB5B6B1DF94FCA0015B198 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB5B6A1DF94FCA0015B198 /* DetailsViewController.swift */; };
 		A9AB5B6E1DF959370015B198 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AB5B6D1DF959370015B198 /* cat.png */; };
 		A9CC25251E0115CF00DBFAAB /* DateDifferenceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC25241E0115CF00DBFAAB /* DateDifferenceTest.swift */; };
+		A9CC25271E0137A600DBFAAB /* DateParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC25261E0137A600DBFAAB /* DateParserTest.swift */; };
 		DCEA0933215A3FE17CD514AB /* Pods_Ibeacon_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7364040FC73D9A182BA9B7 /* Pods_Ibeacon_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		A9AB5B6A1DF94FCA0015B198 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A9AB5B6D1DF959370015B198 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
 		A9CC25241E0115CF00DBFAAB /* DateDifferenceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateDifferenceTest.swift; sourceTree = "<group>"; };
+		A9CC25261E0137A600DBFAAB /* DateParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateParserTest.swift; sourceTree = "<group>"; };
 		BE91D227B134D25C1D6BFE3A /* Pods-Ibeacon_testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_testUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_testUITests/Pods-Ibeacon_testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC1F2E606370FD302B640469 /* Pods-Ibeacon_testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ibeacon_testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ibeacon_testTests/Pods-Ibeacon_testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED2D1FFFFE2D24714712CA10 /* Pods_Ibeacon_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ibeacon_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +174,7 @@
 		842AF1171DDFB33F00A35D81 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84485F561DF9BAFC00BD6896 /* DateDifference.swift */,
 				842AF1181DDFB35900A35D81 /* Restaurant.swift */,
 			);
 			name = Models;
@@ -231,7 +234,6 @@
 				A95EB4291DF68C1C00ED37D3 /* Timer */,
 				A9988A2C1DD0AE4A0028108E /* AppDelegate.swift */,
 				A90872A61DF8FCBD00716832 /* Controllers */,
-				84485F561DF9BAFC00BD6896 /* DateDifference.swift */,
 				A9988A301DD0AE4A0028108E /* Main.storyboard */,
 				A9988A331DD0AE4A0028108E /* Assets.xcassets */,
 				A9988A351DD0AE4A0028108E /* LaunchScreen.storyboard */,
@@ -249,6 +251,7 @@
 				84ED283A1E00788500063F17 /* RestaurantTest.swift */,
 				A9988A431DD0AE4B0028108E /* Info.plist */,
 				A9CC25241E0115CF00DBFAAB /* DateDifferenceTest.swift */,
+				A9CC25261E0137A600DBFAAB /* DateParserTest.swift */,
 			);
 			path = Ibeacon_testTests;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				A9988A421DD0AE4B0028108E /* Ibeacon_testTests.swift in Sources */,
 				8462D4C71E00896B007A1896 /* Restaurant.swift in Sources */,
 				84ED283C1E00866B00063F17 /* JSONParser.swift in Sources */,
+				A9CC25271E0137A600DBFAAB /* DateParserTest.swift in Sources */,
 				8462D4C81E008973007A1896 /* DateDifference.swift in Sources */,
 				8462D4C91E008AB3007A1896 /* MockData.swift in Sources */,
 				84ED283D1E00866E00063F17 /* DateParser.swift in Sources */,

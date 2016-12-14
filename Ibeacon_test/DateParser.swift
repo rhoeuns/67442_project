@@ -13,7 +13,6 @@ class DateParser {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
-        
         return dateFormatter.dateFromString(dateString)!
         
     }
